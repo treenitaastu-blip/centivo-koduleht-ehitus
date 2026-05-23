@@ -95,40 +95,6 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background text-foreground font-body">
-      {/* Nav */}
-      <nav className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <a href="#" className="flex items-center gap-2">
-            <div className="size-8 bg-brand-orange rounded-sm flex items-center justify-center text-accent-foreground font-bold font-display">
-              C
-            </div>
-            <span className="font-display text-xl font-bold tracking-tight uppercase">
-              Centivo
-            </span>
-          </a>
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-wider">
-            <a href="#teenused" className="hover:text-brand-orange transition-colors">
-              Teenused
-            </a>
-            <a href="#meist" className="hover:text-brand-orange transition-colors">
-              Meist
-            </a>
-            <a
-              href="#kontakt"
-              className="px-5 py-2.5 bg-brand-dark text-primary-foreground rounded-full hover:bg-brand-orange transition-all"
-            >
-              Küsi pakkumist
-            </a>
-          </div>
-          <a
-            href="#kontakt"
-            className="md:hidden px-4 py-2 bg-brand-dark text-primary-foreground rounded-full text-xs font-medium uppercase tracking-wider"
-          >
-            Pakkumine
-          </a>
-        </div>
-      </nav>
-
       {/* Hero */}
       <header className="relative px-6 py-20 lg:py-32 overflow-hidden">
         <div className="mx-auto max-w-7xl grid lg:grid-cols-2 gap-12 items-center">
@@ -137,18 +103,18 @@ function Index() {
               <span className="size-2 bg-brand-orange rounded-full" />
               Tartu & Lõuna-Eesti
             </div>
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] tracking-tight mb-8">
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] tracking-tight mb-8 text-brand-dark">
               KVALITEETNE <br />
               <span className="text-brand-orange">SISEVIIMISTLUS</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-md mb-10 leading-relaxed">
-              Krohvimine, maalritööd ja fassaadid. 20 aastat kogemust ning paindlik,
-              etapiviisiline lähenemine igale objektile.
+              Krohvimine, maalritööd ja fassaadid. 20 aastat kogemust ning paindlik, etapiviisiline
+              lähenemine igale objektile.
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <a
                 href="#teenused"
-                className="px-8 py-4 bg-brand-dark text-primary-foreground font-bold rounded-sm hover:bg-brand-orange transition-all uppercase tracking-wider text-sm"
+                className="px-8 py-4 bg-brand-orange text-primary-foreground font-bold rounded-sm hover:bg-brand-copper-hover transition-all uppercase tracking-wider text-sm"
               >
                 Vaata teenuseid
               </a>
@@ -156,12 +122,12 @@ function Index() {
                 <span className="text-xs uppercase text-muted-foreground font-bold tracking-widest">
                   Alates
                 </span>
-                <span className="text-2xl font-display font-bold">25€/h</span>
+                <span className="text-2xl font-display font-bold text-brand-orange">25€/h</span>
               </div>
             </div>
           </div>
           <div className="relative">
-            <div className="w-full aspect-[4/5] overflow-hidden rounded-sm outline-1 -outline-offset-1 outline-black/5">
+            <div className="w-full aspect-[4/5] overflow-hidden rounded-sm outline-1 -outline-offset-1 outline-border">
               <img
                 src={heroImage}
                 alt="Centivo maalrid teostavad siseviimistlust"
@@ -185,18 +151,18 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
             <div>
-              <h2 className="font-display text-4xl md:text-5xl font-bold mb-4 tracking-tight">
+              <h2 className="font-display text-4xl md:text-5xl font-bold mb-4 tracking-tight text-brand-dark">
                 Vali vajalik teenus
               </h2>
               <p className="text-muted-foreground max-w-xl">
-                Hinnad on orienteeruvad ja sõltuvad objektist. Märgi teenused, mida vajad —
-                koostame personaalse pakkumise.
+                Hinnad on orienteeruvad ja sõltuvad objektist. Märgi teenused, mida vajad — koostame
+                personaalse pakkumise.
               </p>
             </div>
             {selected.length > 0 && (
               <a
                 href="#kontakt"
-                className="px-6 py-3 bg-brand-orange text-accent-foreground font-bold uppercase tracking-wider text-xs rounded-sm hover:bg-brand-dark transition-colors"
+                className="px-6 py-3 bg-brand-orange text-accent-foreground font-bold uppercase tracking-wider text-xs rounded-sm hover:bg-brand-copper-hover transition-colors"
               >
                 Küsi pakkumist ({selected.length})
               </a>
@@ -220,7 +186,9 @@ function Index() {
                   <div className="flex justify-between items-start mb-6">
                     <div
                       className={`size-12 flex items-center justify-center transition-colors ${
-                        active ? "bg-brand-orange/10" : "bg-surface-muted group-hover:bg-brand-orange/10"
+                        active
+                          ? "bg-brand-orange/10"
+                          : "bg-surface-muted group-hover:bg-brand-orange/10"
                       }`}
                     >
                       <ServiceIcon variant={s.iconVariant} />
@@ -240,8 +208,8 @@ function Index() {
                   <div
                     className={`w-full py-3 border text-center font-bold text-xs uppercase tracking-widest transition-all ${
                       active
-                        ? "bg-brand-dark text-primary-foreground border-brand-dark"
-                        : "border-border group-hover:bg-brand-dark group-hover:text-primary-foreground group-hover:border-brand-dark"
+                        ? "bg-brand-orange text-primary-foreground border-brand-orange"
+                        : "border-brand-dark text-brand-dark group-hover:bg-brand-dark group-hover:text-primary-foreground group-hover:border-brand-dark"
                     }`}
                   >
                     {active ? "✓ Valitud" : "Vali etapp"}
@@ -263,18 +231,17 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid lg:grid-cols-2 gap-20">
             <div className="space-y-8">
-              <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight tracking-tight">
+              <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight tracking-tight text-brand-dark">
                 Meie standard on <br />
                 Sinu rahulolu.
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Centivo ei ole järjekordne ehitusbrigaad. Meie meeskonnal on 15–20 aastat
-                kogemust siseviimistluse valdkonnas. Võtame vastu vaid tööd, mida oleme
-                võimelised teostama kõrgeima standardiga — kuulame klienti ja pakume
-                individuaalse lahenduse.
+                Centivo ei ole järjekordne ehitusbrigaad. Meie meeskonnal on 20 aastat kogemust
+                siseviimistluse valdkonnas. Võtame vastu vaid tööd, mida oleme võimelised teostama
+                kõrgeima standardiga — kuulame klienti ja pakume individuaalse lahenduse.
               </p>
               <div className="grid sm:grid-cols-2 gap-6">
-                <div className="p-6 bg-surface-muted">
+                <div className="p-6 bg-surface-muted border border-border">
                   <h4 className="font-bold mb-2 uppercase text-xs tracking-widest text-brand-orange">
                     Paindlikkus
                   </h4>
@@ -282,7 +249,7 @@ function Index() {
                     Saab tellida etappide kaupa — tee täpselt nii palju kui vaja, oma ajakavas.
                   </p>
                 </div>
-                <div className="p-6 bg-surface-muted">
+                <div className="p-6 bg-surface-muted border border-border">
                   <h4 className="font-bold mb-2 uppercase text-xs tracking-widest text-brand-orange">
                     Täislahendus
                   </h4>
@@ -290,7 +257,7 @@ function Index() {
                     Lammutusest ja prügi äraveost krohvimise ja maalrtöödeni — kõik ühest kohast.
                   </p>
                 </div>
-                <div className="p-6 bg-surface-muted">
+                <div className="p-6 bg-surface-muted border border-border">
                   <h4 className="font-bold mb-2 uppercase text-xs tracking-widest text-brand-orange">
                     Kõigile klientidele
                   </h4>
@@ -298,7 +265,7 @@ function Index() {
                     Eraisikud, ettevõtted ja korteriühistud — leiame lahenduse pea kõigile.
                   </p>
                 </div>
-                <div className="p-6 bg-surface-muted">
+                <div className="p-6 bg-surface-muted border border-border">
                   <h4 className="font-bold mb-2 uppercase text-xs tracking-widest text-brand-orange">
                     Tartu & Lõuna-Eesti
                   </h4>
@@ -313,25 +280,25 @@ function Index() {
                 <h3 className="font-display text-3xl font-bold mb-6 tracking-tight">
                   Ei tea, kust alustada?
                 </h3>
-                <p className="text-zinc-400 mb-8 leading-relaxed">
+                <p className="text-[#E8E3DA] mb-8 leading-relaxed">
                   Pakume nõustamist ja hindamist. Kirjelda oma objekti — leiame just sulle sobiva
                   lahenduse ja anname ausa hinnangu.
                 </p>
                 <ul className="space-y-3 text-sm">
                   {[
-                    "15–20 aastat kogemust meeskonnas",
+                    "20 aastat kogemust meeskonnas",
                     "Individuaalne lähenemine, mitte üks hind kõigile",
                     "Paindlik etapiviisiline teostus",
                     "Standardkvaliteet — vastu võtame vaid tööd, mida suudame teha hästi",
                   ].map((t) => (
                     <li key={t} className="flex gap-3">
                       <span className="text-brand-orange font-bold">→</span>
-                      <span className="text-zinc-300">{t}</span>
+                      <span className="text-[#F7F5F1]">{t}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="absolute -right-20 -bottom-20 size-64 bg-brand-orange/20 rounded-full blur-3xl" />
+              <div className="absolute -right-20 -bottom-20 size-64 bg-brand-orange/10 rounded-full blur-3xl" />
             </div>
           </div>
         </div>
@@ -341,19 +308,22 @@ function Index() {
       <section id="kontakt" className="py-24 bg-surface-muted">
         <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-16">
           <div>
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 tracking-tight text-brand-dark">
               Võta ühendust
             </h2>
             <p className="text-muted-foreground mb-10 max-w-md">
-              Kirjuta oma objektist ja vajadustest — vastame 24 tunni jooksul ja leiame sulle
-              parima lahenduse.
+              Kirjuta oma objektist ja vajadustest — vastame 24 tunni jooksul ja leiame sulle parima
+              lahenduse.
             </p>
             <div className="space-y-6">
               <div>
                 <span className="block text-xs uppercase tracking-widest text-muted-foreground font-bold mb-1">
                   Telefon
                 </span>
-                <a href="tel:+372" className="text-2xl font-display font-bold hover:text-brand-orange transition-colors">
+                <a
+                  href="tel:+372"
+                  className="text-2xl font-display font-bold hover:text-brand-orange transition-colors"
+                >
                   +372 5XXX XXXX
                 </a>
               </div>
@@ -361,7 +331,10 @@ function Index() {
                 <span className="block text-xs uppercase tracking-widest text-muted-foreground font-bold mb-1">
                   E-post
                 </span>
-                <a href="mailto:info@centivo.ee" className="text-2xl font-display font-bold hover:text-brand-orange transition-colors">
+                <a
+                  href="mailto:info@centivo.ee"
+                  className="text-2xl font-display font-bold hover:text-brand-orange transition-colors"
+                >
                   info@centivo.ee
                 </a>
               </div>
@@ -374,13 +347,13 @@ function Index() {
               <div className="flex gap-4 pt-4">
                 <a
                   href="#"
-                  className="px-5 py-2.5 border border-border bg-surface font-bold text-xs uppercase tracking-widest hover:border-brand-orange hover:text-brand-orange transition-colors"
+                  className="px-5 py-2.5 border border-brand-dark bg-transparent text-brand-dark font-bold text-xs uppercase tracking-widest hover:bg-brand-dark hover:text-primary-foreground transition-colors"
                 >
                   Instagram
                 </a>
                 <a
                   href="#"
-                  className="px-5 py-2.5 border border-border bg-surface font-bold text-xs uppercase tracking-widest hover:border-brand-orange hover:text-brand-orange transition-colors"
+                  className="px-5 py-2.5 border border-brand-dark bg-transparent text-brand-dark font-bold text-xs uppercase tracking-widest hover:bg-brand-dark hover:text-primary-foreground transition-colors"
                 >
                   Facebook
                 </a>
@@ -404,7 +377,7 @@ function Index() {
             }}
           >
             <h3 className="font-display text-2xl font-bold mb-2">Saada päring</h3>
-            <p className="text-zinc-400 text-sm mb-6">
+            <p className="text-[#E8E3DA] text-sm mb-6">
               {selected.length > 0
                 ? `Valitud ${selected.length} teenust — lisame need automaatselt päringusse.`
                 : "Vali eelnevalt teenused või kirjelda oma vajadust allpool."}
@@ -413,24 +386,24 @@ function Index() {
               name="nimi"
               required
               placeholder="Sinu nimi"
-              className="w-full bg-brand-zinc border-none p-4 text-sm focus:ring-2 focus:ring-brand-orange focus:outline-none placeholder:text-zinc-500"
+              className="w-full bg-brand-zinc border-none p-4 text-sm text-primary-foreground focus:ring-2 focus:ring-brand-orange focus:outline-none placeholder:text-[#E8E3DA]/70"
             />
             <input
               name="kontakt"
               required
               placeholder="E-post või telefon"
-              className="w-full bg-brand-zinc border-none p-4 text-sm focus:ring-2 focus:ring-brand-orange focus:outline-none placeholder:text-zinc-500"
+              className="w-full bg-brand-zinc border-none p-4 text-sm text-primary-foreground focus:ring-2 focus:ring-brand-orange focus:outline-none placeholder:text-[#E8E3DA]/70"
             />
             <textarea
               name="sonum"
               rows={4}
               required
               placeholder="Kirjelda lühidalt oma objekti ja tööde mahtu"
-              className="w-full bg-brand-zinc border-none p-4 text-sm focus:ring-2 focus:ring-brand-orange focus:outline-none placeholder:text-zinc-500 resize-none"
+              className="w-full bg-brand-zinc border-none p-4 text-sm text-primary-foreground focus:ring-2 focus:ring-brand-orange focus:outline-none placeholder:text-[#E8E3DA]/70 resize-none"
             />
             <button
               type="submit"
-              className="w-full py-4 bg-brand-orange text-accent-foreground font-bold uppercase tracking-widest text-sm hover:bg-background hover:text-brand-dark transition-all"
+              className="w-full py-4 bg-brand-orange text-accent-foreground font-bold uppercase tracking-widest text-sm hover:bg-brand-copper-hover transition-all"
             >
               Saada päring
             </button>
@@ -439,9 +412,9 @@ function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-surface-muted py-12 border-t border-border">
+      <footer className="bg-brand-dark text-primary-foreground py-12 border-t border-brand-dark">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8 border-b border-border pb-12">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-8 border-b border-[#DED8CE]/20 pb-12">
             <div>
               <div className="flex items-center gap-2 mb-3">
                 <div className="size-6 bg-brand-orange rounded-sm" />
@@ -449,20 +422,26 @@ function Index() {
                   Centivo
                 </span>
               </div>
-              <p className="text-muted-foreground text-sm">
+              <p className="text-[#E8E3DA] text-sm">
                 Kvaliteetne siseviimistlus Tartus ja Lõuna-Eestis.
               </p>
             </div>
             <div className="flex gap-6">
-              <a href="#" className="text-muted-foreground hover:text-brand-dark transition-colors font-bold text-xs uppercase tracking-widest">
+              <a
+                href="#"
+                className="text-[#E8E3DA] hover:text-brand-orange transition-colors font-bold text-xs uppercase tracking-widest"
+              >
                 Instagram
               </a>
-              <a href="#" className="text-muted-foreground hover:text-brand-dark transition-colors font-bold text-xs uppercase tracking-widest">
+              <a
+                href="#"
+                className="text-[#E8E3DA] hover:text-brand-orange transition-colors font-bold text-xs uppercase tracking-widest"
+              >
                 Facebook
               </a>
             </div>
           </div>
-          <div className="pt-8 flex flex-col md:flex-row justify-between gap-4 text-[10px] text-muted-foreground uppercase tracking-widest font-bold">
+          <div className="pt-8 flex flex-col md:flex-row justify-between gap-4 text-[10px] text-[#E8E3DA] uppercase tracking-widest font-bold">
             <span>© {new Date().getFullYear()} Centivo Siseviimistlus</span>
             <span>Tartu, Eesti</span>
           </div>

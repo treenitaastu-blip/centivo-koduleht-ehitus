@@ -29,6 +29,7 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-brand-orange: var(--brand-orange);
+  --color-brand-copper-hover: var(--brand-copper-hover);
   --color-brand-dark: var(--brand-dark);
   --color-brand-zinc: var(--brand-zinc);
   --color-surface: var(--surface);
@@ -40,31 +41,32 @@
 :root {
   --radius: 0.5rem;
 
-  --brand-orange: oklch(0.71 0.18 47);
-  --brand-dark: oklch(0.16 0.005 270);
-  --brand-zinc: oklch(0.27 0.005 270);
-  --surface: oklch(1 0 0);
-  --surface-muted: oklch(0.97 0.002 270);
+  --brand-orange: #b96f3c;
+  --brand-copper-hover: #9f5d31;
+  --brand-dark: #1e2428;
+  --brand-zinc: #2b2b2b;
+  --surface: #ffffff;
+  --surface-muted: #e8e3da;
 
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.16 0.005 270);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.16 0.005 270);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.16 0.005 270);
-  --primary: oklch(0.16 0.005 270);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.97 0.002 270);
-  --secondary-foreground: oklch(0.16 0.005 270);
-  --muted: oklch(0.97 0.002 270);
-  --muted-foreground: oklch(0.5 0.01 270);
-  --accent: oklch(0.71 0.18 47);
-  --accent-foreground: oklch(1 0 0);
-  --destructive: oklch(0.6 0.22 27);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.92 0.003 270);
-  --input: oklch(0.92 0.003 270);
-  --ring: oklch(0.71 0.18 47);
+  --background: #f7f5f1;
+  --foreground: #2b2b2b;
+  --card: #ffffff;
+  --card-foreground: #2b2b2b;
+  --popover: #ffffff;
+  --popover-foreground: #2b2b2b;
+  --primary: #1e2428;
+  --primary-foreground: #ffffff;
+  --secondary: #e8e3da;
+  --secondary-foreground: #1e2428;
+  --muted: #e8e3da;
+  --muted-foreground: #6f6f6f;
+  --accent: #b96f3c;
+  --accent-foreground: #ffffff;
+  --destructive: #b96f3c;
+  --destructive-foreground: #ffffff;
+  --border: #ded8ce;
+  --input: #ded8ce;
+  --ring: #b96f3c;
 }
 
 @layer base {
@@ -80,7 +82,10 @@
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
   }
 }
