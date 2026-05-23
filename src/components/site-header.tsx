@@ -21,7 +21,7 @@ export function SiteHeader() {
             aria-controls="mobile-navigation"
             aria-expanded={isMenuOpen}
             onClick={() => setIsMenuOpen((open) => !open)}
-            className="flex size-10 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-brand-orange hover:text-brand-orange md:hidden"
+            className="flex size-10 items-center justify-start text-foreground transition-colors hover:text-brand-orange md:hidden"
           >
             <span className="flex flex-col gap-1.5">
               <span className="block h-0.5 w-5 bg-current" />
