@@ -12,6 +12,8 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as UudisedRouteImport } from './routes/uudised'
 import { Route as TehtudToodRouteImport } from './routes/tehtud-tood'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as UudisedIndexRouteImport } from './routes/uudised/index'
+import { Route as UudisedSlugRouteImport } from './routes/uudised/$slug'
 
 const UudisedRoute = UudisedRouteImport.update({
   id: '/uudised',
@@ -28,35 +30,56 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const UudisedIndexRoute = UudisedIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => UudisedRoute,
+} as any)
+const UudisedSlugRoute = UudisedSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => UudisedRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/tehtud-tood': typeof TehtudToodRoute
-  '/uudised': typeof UudisedRoute
+  '/uudised': typeof UudisedRouteWithChildren
+  '/uudised/$slug': typeof UudisedSlugRoute
+  '/uudised/': typeof UudisedIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/tehtud-tood': typeof TehtudToodRoute
-  '/uudised': typeof UudisedRoute
+  '/uudised/$slug': typeof UudisedSlugRoute
+  '/uudised': typeof UudisedIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/tehtud-tood': typeof TehtudToodRoute
-  '/uudised': typeof UudisedRoute
+  '/uudised': typeof UudisedRouteWithChildren
+  '/uudised/$slug': typeof UudisedSlugRoute
+  '/uudised/': typeof UudisedIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/tehtud-tood' | '/uudised'
+  fullPaths: '/' | '/tehtud-tood' | '/uudised' | '/uudised/$slug' | '/uudised/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/tehtud-tood' | '/uudised'
-  id: '__root__' | '/' | '/tehtud-tood' | '/uudised'
+  to: '/' | '/tehtud-tood' | '/uudised/$slug' | '/uudised'
+  id:
+    | '__root__'
+    | '/'
+    | '/tehtud-tood'
+    | '/uudised'
+    | '/uudised/$slug'
+    | '/uudised/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   TehtudToodRoute: typeof TehtudToodRoute
-  UudisedRoute: typeof UudisedRoute
+  UudisedRoute: typeof UudisedRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -82,13 +105,40 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/uudised/': {
+      id: '/uudised/'
+      path: '/'
+      fullPath: '/uudised/'
+      preLoaderRoute: typeof UudisedIndexRouteImport
+      parentRoute: typeof UudisedRoute
+    }
+    '/uudised/$slug': {
+      id: '/uudised/$slug'
+      path: '/$slug'
+      fullPath: '/uudised/$slug'
+      preLoaderRoute: typeof UudisedSlugRouteImport
+      parentRoute: typeof UudisedRoute
+    }
   }
 }
+
+interface UudisedRouteChildren {
+  UudisedSlugRoute: typeof UudisedSlugRoute
+  UudisedIndexRoute: typeof UudisedIndexRoute
+}
+
+const UudisedRouteChildren: UudisedRouteChildren = {
+  UudisedSlugRoute: UudisedSlugRoute,
+  UudisedIndexRoute: UudisedIndexRoute,
+}
+
+const UudisedRouteWithChildren =
+  UudisedRoute._addFileChildren(UudisedRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   TehtudToodRoute: TehtudToodRoute,
-  UudisedRoute: UudisedRoute,
+  UudisedRoute: UudisedRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
