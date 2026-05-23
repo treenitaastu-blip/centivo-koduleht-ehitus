@@ -150,14 +150,6 @@ function Index() {
                 personaalse pakkumise.
               </p>
             </div>
-            {selected.length > 0 && (
-              <a
-                href="#kontakt"
-                className="px-6 py-3 bg-brand-orange text-accent-foreground font-bold uppercase tracking-wider text-xs rounded-sm hover:bg-brand-copper-hover transition-colors"
-              >
-                Küsi pakkumist ({selected.length})
-              </a>
-            )}
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

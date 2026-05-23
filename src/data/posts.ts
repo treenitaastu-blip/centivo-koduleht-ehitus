@@ -13,7 +13,7 @@ export const posts: Post[] = [
     slug: "kuidas-valida-krohvimise-ja-pahteldamise-vahel",
     category: "Krohvimine",
     excerpt:
-      "Selgitame lihtsalt, millal piisab pahteldamisest ja millal on mõistlik pind enne krohvida.",
+      "Valik sõltub seina ebatasasusest, pinna seisukorrast ja soovitud lõppviimistlusest. Pahteldus sobib väiksemate paranduste jaoks, krohvimine suurema aluspinna korrigeerimiseks.",
     date: "2025-01-10",
     readTime: "4 min",
   },
@@ -22,7 +22,7 @@ export const posts: Post[] = [
     slug: "mida-arvestada-enne-maalritoode-tellimist",
     category: "Maalritööd",
     excerpt:
-      "Hea lõpptulemus algab pinna seisukorrast, ettevalmistusest ja realistlikust töömahust.",
+      "Maalritöö ei alga värvipurgist. Enne tasub hinnata pinna seisukorda, vajalikku parandust, lihvimist ja kruntimist, sest ettevalmistus määrab suure osa lõpptulemusest.",
     date: "2025-01-10",
     readTime: "3 min",
   },
@@ -31,7 +31,7 @@ export const posts: Post[] = [
     slug: "margfassaad-millal-see-on-moistlik-lahendus",
     category: "Fassaaditööd",
     excerpt:
-      "Märgfassaadi sobivus sõltub hoone seisukorrast, aluspinnast ja soovitud lõpptulemusest.",
+      "Märgfassaadi sobivus sõltub hoone seisukorrast, aluspinnast, soojustuse ja viimistluse vajadusest ning töötingimustest. Lõplik lahendus selgub objekti põhjal.",
     date: "2025-01-10",
     readTime: "5 min",
   },
@@ -40,7 +40,7 @@ export const posts: Post[] = [
     slug: "kas-ehitustoid-saab-tellida-ka-etappide-kaupa",
     category: "Tööde planeerimine",
     excerpt:
-      "Kõiki töid ei pea tellima korraga. Sageli on mõistlik alustada ühest etapist ja liikuda edasi vastavalt vajadusele.",
+      "Tööd saab vajadusel jagada etappideks: lammutus, krohvimine, maalritööd, fassaad või ehitusprügi äravedu. See aitab hoida töömahu ja eelarve paremini kontrolli all.",
     date: "2025-01-10",
     readTime: "3 min",
   },
