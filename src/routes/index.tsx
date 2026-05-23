@@ -34,7 +34,6 @@ type Service = {
   title: string;
   price: string;
   items: string[];
-  iconVariant: "outline" | "circle" | "solid";
 };
 
 const services: Service[] = [
@@ -43,55 +42,49 @@ const services: Service[] = [
     title: "Krohvimine",
     price: "25€/h*",
     items: ["Kipskrohv (MP75)", "Tsementkrohv", "Masin- ja käsitsi krohvimine"],
-    iconVariant: "outline",
   },
   {
     id: "maalritood",
     title: "Maalritööd",
     price: "25€/h*",
     items: ["Pahteldamine", "Värvimine", "Dekoratiivviimistlus"],
-    iconVariant: "solid",
   },
   {
     id: "fassaadid",
     title: "Fassaaditööd",
     price: "Kokkuleppel",
     items: ["Märgfassaadid", "Soojustamine", "Viimistluskrohv"],
-    iconVariant: "circle",
   },
   {
     id: "lammutus",
     title: "Lammutustööd",
     price: "25€/h*",
     items: ["Sisetööde lammutus", "Pinna ettevalmistus", "Ohutu teostus"],
-    iconVariant: "outline",
   },
   {
     id: "prugi",
     title: "Ehitusprügi äravedu",
     price: "Objektipõhine",
     items: ["Kiire utiliseerimine", "Konteinerid kokkuleppel", "Hoiame objekti puhtana"],
-    iconVariant: "solid",
   },
   {
     id: "noustamine",
     title: "Nõustamine & hindamine",
     price: "Tasuta päring",
     items: ["Individuaalne hinnang", "Etapiviisiline plaan", "Materjalide soovitused"],
-    iconVariant: "circle",
   },
 ];
 
-function ServiceIcon({ variant }: { variant: Service["iconVariant"] }) {
-  if (variant === "outline") return <div className="size-6 border-2 border-brand-orange" />;
-  if (variant === "circle") return <div className="size-6 bg-brand-orange/40 rounded-full" />;
-  return <div className="size-6 bg-brand-dark" />;
-}
-
 function Index() {
   const [selected, setSelected] = useState<string[]>([]);
+  const [expandedServices, setExpandedServices] = useState<string[]>([]);
+  const [priceInfoId, setPriceInfoId] = useState<string | null>(null);
   const toggle = (id: string) =>
     setSelected((s) => (s.includes(id) ? s.filter((x) => x !== id) : [...s, id]));
+  const toggleDetails = (id: string) =>
+    setExpandedServices((ids) => (ids.includes(id) ? ids.filter((x) => x !== id) : [...ids, id]));
+  const togglePriceInfo = (id: string) =>
+    setPriceInfoId((current) => (current === id ? null : id));
   const selectedServices = services.filter((service) => selected.includes(service.id));
 
   return (
@@ -173,49 +166,79 @@ function Index() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s) => {
               const active = selected.includes(s.id);
+              const expanded = expandedServices.includes(s.id);
+              const hasPriceInfo = s.price.includes("€/h");
+              const priceInfoOpen = priceInfoId === s.id;
               return (
-                <button
+                <article
                   key={s.id}
-                  type="button"
-                  onClick={() => toggle(s.id)}
-                  className={`group text-left bg-surface p-8 border transition-all cursor-pointer ${
+                  className={`bg-surface p-8 border transition-all ${
                     active
                       ? "border-brand-orange ring-2 ring-brand-orange/30"
-                      : "border-border hover:border-brand-orange"
+                      : "border-border hover:border-brand-orange/60"
                   }`}
                 >
-                  <div className="flex justify-between items-start mb-6">
-                    <div
-                      className={`size-12 flex items-center justify-center transition-colors ${
+                  <div className="mb-6 flex items-start justify-between gap-4">
+                    <div>
+                      <div className="mb-4 h-0.5 w-10 bg-brand-orange/40" />
+                      <h3 className="text-xl font-bold uppercase tracking-tight font-display">
+                        {s.title}
+                      </h3>
+                    </div>
+                    <div className="text-right">
+                      <div className="flex items-center justify-end gap-2">
+                        <span className="text-xl font-display font-bold text-brand-orange">
+                          {s.price}
+                        </span>
+                        {hasPriceInfo && (
+                          <button
+                            type="button"
+                            aria-label="Hinna selgitus"
+                            aria-expanded={priceInfoOpen}
+                            onClick={() => togglePriceInfo(s.id)}
+                            className="flex size-6 items-center justify-center rounded-full border border-border text-xs font-bold text-muted-foreground transition-colors hover:border-brand-orange hover:text-brand-orange"
+                          >
+                            ?
+                          </button>
+                        )}
+                      </div>
+                      {priceInfoOpen && (
+                        <p className="mt-3 max-w-[14rem] text-left text-xs leading-relaxed text-muted-foreground">
+                          Hind on eeldatav. Lõplik hind selgub kokkuleppel vastavalt töö mahule,
+                          objektile ja tingimustele.
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                  {expanded && (
+                    <ul className="text-sm text-muted-foreground space-y-2 mb-8">
+                      {s.items.map((it) => (
+                        <li key={it}>• {it}</li>
+                      ))}
+                    </ul>
+                  )}
+                  <div className="mt-8 space-y-3">
+                    <button
+                      type="button"
+                      aria-expanded={expanded}
+                      onClick={() => toggleDetails(s.id)}
+                      className="w-full text-left text-xs font-bold uppercase tracking-widest text-muted-foreground transition-colors hover:text-brand-orange"
+                    >
+                      {expanded ? "Peida detailid" : "Vaata täpsemalt"}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => toggle(s.id)}
+                      className={`w-full py-3 border text-center font-bold text-xs uppercase tracking-widest transition-all ${
                         active
-                          ? "bg-brand-orange/10"
-                          : "bg-surface-muted group-hover:bg-brand-orange/10"
+                          ? "bg-brand-orange text-primary-foreground border-brand-orange"
+                          : "border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-primary-foreground hover:border-brand-dark"
                       }`}
                     >
-                      <ServiceIcon variant={s.iconVariant} />
-                    </div>
-                    <span className="text-xl font-display font-bold text-brand-orange">
-                      {s.price}
-                    </span>
+                      {active ? "✓ Valitud" : "Vali"}
+                    </button>
                   </div>
-                  <h3 className="text-xl font-bold mb-3 uppercase tracking-tight font-display">
-                    {s.title}
-                  </h3>
-                  <ul className="text-sm text-muted-foreground space-y-2 mb-8">
-                    {s.items.map((it) => (
-                      <li key={it}>• {it}</li>
-                    ))}
-                  </ul>
-                  <div
-                    className={`w-full py-3 border text-center font-bold text-xs uppercase tracking-widest transition-all ${
-                      active
-                        ? "bg-brand-orange text-primary-foreground border-brand-orange"
-                        : "border-brand-dark text-brand-dark group-hover:bg-brand-dark group-hover:text-primary-foreground group-hover:border-brand-dark"
-                    }`}
-                  >
-                    {active ? "✓ Valitud" : "Vali etapp"}
-                  </div>
-                </button>
+                </article>
               );
             })}
           </div>
