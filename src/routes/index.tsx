@@ -370,7 +370,7 @@ function Index() {
                   selectedServices.map((service) => service.title).join(", ") || "—"
                 }\n\nSõnum:\n${data.get("sonum")}`,
               );
-              window.location.href = `mailto:info@centivo.ee?subject=${subject}&body=${body}`;
+              window.location.href = `mailto:centivoehitus@gmail.com?subject=${subject}&body=${body}`;
             }}
           >
             <h3 className="font-display text-2xl font-bold mb-2">Saada päring</h3>
@@ -520,6 +520,12 @@ function Index() {
                 >
                   Instagram
                 </a>
+                <a
+                  href="https://www.facebook.com/CentivoEhitus"
+                  className="font-bold uppercase tracking-widest text-brand-orange transition-colors hover:text-primary-foreground"
+                >
+                  Facebook
+                </a>
               </nav>
             </div>
           </div>
@@ -534,7 +540,7 @@ function Index() {
 
       {selectedServices.length > 0 && (
         <div className="fixed inset-x-0 bottom-4 z-40 px-4">
-          <div className="mx-auto flex max-w-xl items-center justify-between gap-4 rounded-full border border-border bg-surface/95 px-4 py-3 shadow-2xl backdrop-blur-md">
+          <div className="mx-auto flex max-w-xl items-center justify-between gap-4 rounded-full border border-border bg-surface/95 px-4 py-3 backdrop-blur-md">
             <span className="text-sm font-bold text-brand-dark">
               {selectedServices.length === 1
                 ? "1 teenus valitud"

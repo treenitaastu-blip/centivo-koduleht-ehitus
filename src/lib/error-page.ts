@@ -1,9 +1,9 @@
 export function renderErrorPage(): string {
   return `<!doctype html>
-<html lang="en">
+<html lang="et">
   <head>
     <meta charset="utf-8" />
-    <title>This page didn't load</title>
+    <title>Lehe laadimine ebaõnnestus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
       body { font: 15px/1.5 system-ui, -apple-system, sans-serif; background: #F7F5F1; color: #2B2B2B; display: grid; place-items: center; min-height: 100vh; margin: 0; padding: 1.5rem; }
@@ -18,11 +18,11 @@ export function renderErrorPage(): string {
   </head>
   <body>
     <div class="card">
-      <h1>This page didn't load</h1>
-      <p>Something went wrong on our end. You can try refreshing or head back home.</p>
+      <h1>Lehe laadimine ebaõnnestus</h1>
+      <p>Midagi läks valesti. Proovi lehte värskendada või mine tagasi avalehele.</p>
       <div class="actions">
-        <button class="primary" onclick="location.reload()">Try again</button>
-        <a class="secondary" href="/">Go home</a>
+        <button class="primary" onclick="location.reload()">Proovi uuesti</button>
+        <a class="secondary" href="/">Tagasi avalehele</a>
       </div>
     </div>
   </body>
