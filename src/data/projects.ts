@@ -7,30 +7,26 @@ export type Project = {
   title: string;
   slug: string;
   category: string;
-  location: string;
   shortDescription: string;
   services: string[];
-  year: number;
   status: string;
   sections: ProjectSection[];
 };
 
 export const projects: Project[] = [
   {
-    title: "Fassaaditööd Tartus",
+    title: "Märgfassaadi tööd",
     slug: "fassaaditood-tartus",
     category: "Fassaaditööd",
-    location: "Tartu",
     shortDescription:
-      "Fassaadipindade ettevalmistus ja viimistlus eramule või väiksemale objektile.",
+      "Märgfassaadi tööde ülevaade: aluspinna hindamine, ettevalmistus, armeerimine ja viimistlus vastavalt hoone seisukorrale.",
     services: ["Märgfassaad", "ettevalmistus", "viimistlus"],
-    year: 2025,
-    status: "Tehtud töö",
+    status: "Teenus",
     sections: [
       {
-        title: "Töö iseloom",
+        title: "Teenuse iseloom",
         paragraphs: [
-          "Fassaaditööde puhul algab mõistlik lahendus hoone seisukorra hindamisest. Enne tööde mahtu saab täpsemalt hinnata alles siis, kui on selge, milline on olemasolev aluspind, kas varasem viimistlus püsib ja millised kohad vajavad rohkem ettevalmistust.",
+          "Märgfassaadi tööde puhul algab mõistlik lahendus hoone seisukorra hindamisest. Tööde mahtu saab täpsemalt hinnata alles siis, kui on selge, milline on olemasolev aluspind, kas varasem viimistlus püsib ja millised kohad vajavad rohkem ettevalmistust.",
           "Märgfassaad on praktiline lahendus paljudel eramajadel ja väiksematel objektidel, kuid tööde järjekord sõltub alati konkreetsest hoonest. Oluline on vaadata nii fassaadipinda, soklit, avade ümbrust kui ka töötingimusi.",
         ],
       },
@@ -44,22 +40,20 @@ export const projects: Project[] = [
       {
         title: "Mida tellimisel läbi mõelda",
         paragraphs: [
-          "Fassaaditöid planeerides tasub kirjeldada, kas soov on teha kogu fassaad, ainult osa pinnast või valmistada objekt ette järgmiseks etapiks. Samuti on oluline teada, kas eesmärk on viimistlus, soojustamine või olemasoleva lahenduse parandamine.",
+          "Fassaaditöid planeerides tasub kirjeldada, kas vajadus on kogu fassaadi, ainult osa pinna või järgmise tööetapi ettevalmistuse järele. Samuti on oluline teada, kas eesmärk on viimistlus, soojustamine või olemasoleva lahenduse parandamine.",
           "Centivo lähtub fassaaditöödel objektipõhisest hinnangust. See aitab valida tööde järjekorra ja vältida olukorda, kus tehakse liiga vähe ettevalmistust või valitakse lahendus, mis ei sobi konkreetse hoone seisukorraga.",
         ],
       },
     ],
   },
   {
-    title: "Maalritööd Haagel",
+    title: "Maalritööd ja pindade ettevalmistus",
     slug: "maalritood-haagel",
     category: "Maalritööd",
-    location: "Haage",
     shortDescription:
-      "Siseviimistluse maalritööd koos pindade ettevalmistuse ja korrektse lõppviimistlusega.",
+      "Maalritööde teenus koos pindade hindamise, paranduste, pahtelduse, lihvimise, kruntimise ja värvimisega.",
     services: ["Pahteldus", "kruntimine", "värvimine"],
-    year: 2025,
-    status: "Tehtud töö",
+    status: "Teenus",
     sections: [
       {
         title: "Maalritöö ei alga värvimisest",
@@ -85,15 +79,13 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "Krohvimistööd Tartumaal",
+    title: "Krohvimistööd siseviimistluses",
     slug: "krohvimistood-tartumaal",
     category: "Krohvimine",
-    location: "Tartumaa",
     shortDescription:
-      "Krohvimistööd ja aluspindade ettevalmistus enne järgmist siseviimistluse etappi.",
+      "Krohvimistööd aitavad luua sobiva aluspinna edasiseks siseviimistluseks, kui pind vajab suuremat tasandamist või tugevamat aluskihti.",
     services: ["Kipskrohv", "pindade ettevalmistus"],
-    year: 2025,
-    status: "Tehtud töö",
+    status: "Teenus",
     sections: [
       {
         title: "Krohvimine loob aluse järgmistele töödele",
@@ -122,12 +114,10 @@ export const projects: Project[] = [
     title: "Lammutus ja ehitusprügi äravedu",
     slug: "lammutus-ja-ehitusprugi-aravedu",
     category: "Lammutus",
-    location: "Lõuna-Eesti",
     shortDescription:
-      "Objekti ettevalmistus järgmiseks tööetapiks koos lammutuse, koristuse ja prügi äraveoga.",
+      "Lammutus ja ehitusprügi äravedu aitavad objekti ette valmistada järgmiseks tööetapiks või eraldi korrastustööks.",
     services: ["Lammutus", "koristus", "ehitusprügi äravedu"],
-    year: 2025,
-    status: "Tehtud töö",
+    status: "Teenus",
     sections: [
       {
         title: "Ettevalmistus järgmisteks töödeks",

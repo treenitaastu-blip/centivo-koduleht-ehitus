@@ -2,8 +2,7 @@ import { useState } from "react";
 
 const navigationLinks = [
   { href: "/", label: "Avaleht" },
-  { href: "/#teenused", label: "Teenused" },
-  { href: "/tehtud-tood", label: "Tehtud tööd" },
+  { href: "/tehtud-tood", label: "Teenused" },
   { href: "/uudised", label: "Uudised" },
   { href: "/#kontakt", label: "Kontakt" },
 ];

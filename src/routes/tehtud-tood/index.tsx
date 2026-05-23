@@ -4,11 +4,11 @@ import { projects } from "@/data/projects";
 export const Route = createFileRoute("/tehtud-tood/")({
   head: () => ({
     meta: [
-      { title: "Tehtud tööd | Centivo" },
+      { title: "Teenused | Centivo" },
       {
         name: "description",
         content:
-          "Valik Centivo tehtud töödest: fassaaditööd, maalritööd, krohvimine ja muud objektid Tartus ning Lõuna-Eestis.",
+          "Centivo teenused: krohvimine, maalritööd, märgfassaadid, lammutus ja ehitusprügi äravedu Tartus ning Lõuna-Eestis.",
       },
     ],
   }),
@@ -21,15 +21,15 @@ function TehtudTood() {
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
           <p className="mb-4 text-xs font-bold uppercase tracking-widest text-brand-orange">
-            Centivo tehtud tööd
+            Centivo teenused
           </p>
           <h1 className="font-display text-4xl md:text-5xl font-bold tracking-tight text-brand-dark">
-            Tehtud tööd
+            Teenused
           </h1>
           <p className="mt-6 text-muted-foreground leading-relaxed">
-            Vaata valikut Centivo tehtud töödest Tartus, Tartumaal ja Lõuna-Eestis.
-            Teostame nii üksikuid tööetappe kui ka suuremaid siseviimistlus-, krohvimis-,
-            maalri- ja fassaaditöid.
+            Siit leiad ülevaate töödest ja teenustest, millega Centivo saab aidata.
+            Teenuste kirjeldused aitavad paremini mõista tööde sisu, võimalikke
+            etappe ja seda, millist infot on pakkumise küsimisel kasulik jagada.
           </p>
           <p className="mt-6 text-sm font-bold uppercase tracking-widest text-brand-dark">
             20 aastat kogemust | Tartu ja Lõuna-Eesti | Tööd etappide kaupa
@@ -46,11 +46,10 @@ function TehtudTood() {
                 <span className="rounded-full bg-brand-orange/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand-orange">
                   {project.status}
                 </span>
-                <span className="text-sm font-bold text-brand-dark">{project.year}</span>
               </div>
 
               <p className="mb-3 text-xs font-bold uppercase tracking-widest text-muted-foreground">
-                {project.category} | {project.location}
+                {project.category}
               </p>
               <h2 className="font-display text-2xl font-bold tracking-tight text-brand-dark">
                 {project.title}
@@ -81,7 +80,7 @@ function TehtudTood() {
                   params={{ slug: project.slug }}
                   className="text-xs font-bold uppercase tracking-widest text-brand-dark transition-colors hover:text-brand-orange"
                 >
-                  Vaata lähemalt
+                  Loe lähemalt
                 </Link>
               </div>
             </article>
@@ -91,7 +90,7 @@ function TehtudTood() {
         <section className="mt-16 bg-brand-dark p-8 text-primary-foreground md:p-10">
           <div className="max-w-3xl">
             <h2 className="font-display text-3xl font-bold tracking-tight">
-              Soovid sarnast tööd tellida?
+              Soovid teenuse kohta pakkumist?
             </h2>
             <p className="mt-4 text-[#E8E3DA] leading-relaxed">
               Kirjelda oma objekti ja aitame hinnata, milline tööde maht või etapp oleks

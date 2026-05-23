@@ -13,12 +13,12 @@ export const Route = createFileRoute("/tehtud-tood/$slug")({
   },
   head: ({ loaderData }) => ({
     meta: [
-      { title: `${loaderData?.project.title ?? "Tehtud töö"} | Centivo` },
+      { title: `${loaderData?.project.title ?? "Teenus"} | Centivo` },
       {
         name: "description",
         content:
           loaderData?.project.shortDescription ??
-          "Centivo tehtud tööde näited ja töömahu selgitused Tartus ning Lõuna-Eestis.",
+          "Centivo teenuste kirjeldused ja töömahu selgitused Tartus ning Lõuna-Eestis.",
       },
     ],
   }),
@@ -37,13 +37,7 @@ function TehtudTooDetail() {
               {project.status}
             </span>
             <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
-              {project.year}
-            </span>
-            <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
               {project.category}
-            </span>
-            <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
-              {project.location}
             </span>
           </div>
 
@@ -95,7 +89,7 @@ function TehtudTooDetail() {
       <section className="mx-auto mt-16 max-w-4xl bg-brand-dark p-8 text-primary-foreground md:p-10">
         <div className="max-w-3xl">
           <h2 className="font-display text-3xl font-bold tracking-tight">
-            Soovid sarnast tööd tellida?
+            Soovid seda teenust tellida?
           </h2>
           <p className="mt-4 text-[#E8E3DA] leading-relaxed">
             Kirjelda oma objekti ja aitame hinnata, milline tööde maht või etapp oleks
@@ -113,7 +107,7 @@ function TehtudTooDetail() {
             href="/tehtud-tood"
             className="px-6 py-3 border border-[#DED8CE]/40 text-primary-foreground font-bold uppercase tracking-wider text-xs rounded-sm hover:bg-primary-foreground hover:text-brand-dark transition-colors"
           >
-            Tagasi tehtud tööde juurde
+            Tagasi teenuste juurde
           </a>
         </div>
       </section>
