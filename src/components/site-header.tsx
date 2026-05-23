@@ -47,14 +47,14 @@ export function SiteHeader() {
               </a>
             ))}
             <a
-              href="/#kontakt"
+              href="/#paring"
               className="px-5 py-2.5 bg-brand-orange text-primary-foreground rounded-full hover:bg-brand-copper-hover transition-all"
             >
               Pakkumine
             </a>
           </div>
           <a
-            href="/#kontakt"
+            href="/#paring"
             onClick={() => setIsMenuOpen(false)}
             className="justify-self-end px-4 py-2 bg-brand-orange text-primary-foreground rounded-full text-xs font-medium uppercase tracking-wider hover:bg-brand-copper-hover transition-colors md:hidden"
           >

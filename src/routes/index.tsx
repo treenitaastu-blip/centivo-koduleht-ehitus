@@ -334,10 +334,10 @@ function Index() {
                   E-post
                 </span>
                 <a
-                  href="mailto:info@centivo.ee"
+                  href="mailto:centivoehitus@gmail.com"
                   className="text-2xl font-display font-bold hover:text-brand-orange transition-colors"
                 >
-                  info@centivo.ee
+                  centivoehitus@gmail.com
                 </a>
               </div>
               <div>
@@ -348,16 +348,10 @@ function Index() {
               </div>
               <div className="flex gap-4 pt-4">
                 <a
-                  href="#"
+                  href="https://www.instagram.com/centivoehitus/"
                   className="px-5 py-2.5 border border-brand-dark bg-transparent text-brand-dark font-bold text-xs uppercase tracking-widest hover:bg-brand-dark hover:text-primary-foreground transition-colors"
                 >
                   Instagram
-                </a>
-                <a
-                  href="#"
-                  className="px-5 py-2.5 border border-brand-dark bg-transparent text-brand-dark font-bold text-xs uppercase tracking-widest hover:bg-brand-dark hover:text-primary-foreground transition-colors"
-                >
-                  Facebook
                 </a>
               </div>
             </div>
@@ -435,38 +429,105 @@ function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-brand-dark text-primary-foreground py-12 border-t border-brand-dark">
+      <footer className="bg-brand-dark text-primary-foreground py-14 border-t border-brand-dark">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8 border-b border-[#DED8CE]/20 pb-12">
-            <div>
+          <div className="grid gap-10 border-b border-[#DED8CE]/20 pb-12 md:grid-cols-2 lg:grid-cols-4">
+            <div className="lg:col-span-1">
               <div className="flex items-center gap-2 mb-3">
                 <div className="size-6 bg-brand-orange rounded-sm" />
                 <span className="font-display text-lg font-bold tracking-tight uppercase">
-                  Centivo
+                  Centivo OÜ
                 </span>
               </div>
-              <p className="text-[#E8E3DA] text-sm">
-                Kvaliteetne siseviimistlus Tartus ja Lõuna-Eestis.
+              <p className="text-sm leading-relaxed text-[#E8E3DA]">
+                Ehitustööd, krohvimine, maalritööd ja märgfassaadi tööd Tartus,
+                Tartumaal ja Lõuna-Eestis.
+              </p>
+              <p className="mt-4 text-xs font-bold uppercase tracking-widest text-[#E8E3DA]">
+                Registrikood: 17512951
               </p>
             </div>
-            <div className="flex gap-6">
-              <a
-                href="#"
-                className="text-[#E8E3DA] hover:text-brand-orange transition-colors font-bold text-xs uppercase tracking-widest"
-              >
-                Instagram
-              </a>
-              <a
-                href="#"
-                className="text-[#E8E3DA] hover:text-brand-orange transition-colors font-bold text-xs uppercase tracking-widest"
-              >
-                Facebook
-              </a>
+
+            <div>
+              <h2 className="mb-4 text-xs font-bold uppercase tracking-widest text-brand-orange">
+                Kontakt
+              </h2>
+              <div className="space-y-3 text-sm text-[#E8E3DA]">
+                <p>
+                  Telefon:{" "}
+                  <a
+                    href="tel:+37258299962"
+                    className="font-semibold text-primary-foreground transition-colors hover:text-brand-orange"
+                  >
+                    +372 58299962
+                  </a>
+                </p>
+                <p>
+                  Email:{" "}
+                  <a
+                    href="mailto:centivoehitus@gmail.com"
+                    className="font-semibold text-primary-foreground transition-colors hover:text-brand-orange"
+                  >
+                    centivoehitus@gmail.com
+                  </a>
+                </p>
+                <p>Piirkond: Tartu, Tartumaa ja Lõuna-Eesti</p>
+              </div>
+            </div>
+
+            <div>
+              <h2 className="mb-4 text-xs font-bold uppercase tracking-widest text-brand-orange">
+                Teenused
+              </h2>
+              <ul className="space-y-2 text-sm text-[#E8E3DA]">
+                <li>Krohvimine</li>
+                <li>Maalritööd</li>
+                <li>Märgfassaadi tööd</li>
+                <li>Lammutus</li>
+                <li>Ehitusprügi äravedu</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="mb-4 text-xs font-bold uppercase tracking-widest text-brand-orange">
+                Lingid
+              </h2>
+              <nav className="flex flex-col gap-2 text-sm">
+                <a href="/" className="text-[#E8E3DA] transition-colors hover:text-brand-orange">
+                  Avaleht
+                </a>
+                <a
+                  href="/tehtud-tood"
+                  className="text-[#E8E3DA] transition-colors hover:text-brand-orange"
+                >
+                  Teenused
+                </a>
+                <a
+                  href="/uudised"
+                  className="text-[#E8E3DA] transition-colors hover:text-brand-orange"
+                >
+                  Uudised
+                </a>
+                <a
+                  href="/#kontakt"
+                  className="text-[#E8E3DA] transition-colors hover:text-brand-orange"
+                >
+                  Kontakt
+                </a>
+                <a
+                  href="https://www.instagram.com/centivoehitus/"
+                  className="pt-2 font-bold uppercase tracking-widest text-brand-orange transition-colors hover:text-primary-foreground"
+                >
+                  Instagram
+                </a>
+              </nav>
             </div>
           </div>
           <div className="pt-8 flex flex-col md:flex-row justify-between gap-4 text-[10px] text-[#E8E3DA] uppercase tracking-widest font-bold">
-            <span>© {new Date().getFullYear()} Centivo Siseviimistlus</span>
-            <span>Tartu, Eesti</span>
+            <span>© {new Date().getFullYear()} Centivo OÜ</span>
+            <a href="/#paring" className="transition-colors hover:text-brand-orange">
+              Küsi pakkumist
+            </a>
           </div>
         </div>
       </footer>
