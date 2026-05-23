@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import heroImage from "@/assets/hero-painter.jpg";
+import heroImage from "@/assets/hero-painter.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -121,7 +121,7 @@ function Index() {
             <div className="w-full aspect-[4/5] overflow-hidden rounded-sm outline-1 -outline-offset-1 outline-border">
               <img
                 src={heroImage}
-                alt="Centivo maalrid teostavad siseviimistlust"
+                alt="Töömees teostab siseviimistluse käigus krohvimistöid"
                 width={1200}
                 height={1408}
                 className="w-full h-full object-cover"
