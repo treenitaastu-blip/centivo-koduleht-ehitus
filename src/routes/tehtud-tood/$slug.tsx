@@ -27,6 +27,13 @@ export const Route = createFileRoute("/tehtud-tood/$slug")({
 
 function TehtudTooDetail() {
   const { project } = Route.useLoaderData();
+  const inquiryParams = new URLSearchParams();
+
+  project.inquiryServiceIds.forEach((serviceId) => {
+    inquiryParams.append("teenus", serviceId);
+  });
+
+  const inquiryHref = `/?${inquiryParams.toString()}#paring`;
 
   return (
     <main className="min-h-screen bg-background text-foreground px-6 py-24">
@@ -98,7 +105,7 @@ function TehtudTooDetail() {
         </div>
         <div className="mt-8 flex flex-wrap gap-4">
           <a
-            href="/#paring"
+            href={inquiryHref}
             className="px-6 py-3 bg-brand-orange text-primary-foreground font-bold uppercase tracking-wider text-xs rounded-sm hover:bg-brand-copper-hover transition-colors"
           >
             Küsi pakkumist

@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import heroImage from "@/assets/hero-painter.png";
 
 export const Route = createFileRoute("/")({
@@ -75,9 +75,24 @@ const services: Service[] = [
   },
 ];
 
+const serviceIds = new Set(services.map((service) => service.id));
+
 function Index() {
   const [selected, setSelected] = useState<string[]>([]);
   const [priceInfoId, setPriceInfoId] = useState<string | null>(null);
+
+  useEffect(() => {
+    const requestedServiceIds = new URLSearchParams(window.location.search).getAll("teenus");
+    const validServiceIds = requestedServiceIds.filter(
+      (serviceId, index) =>
+        serviceIds.has(serviceId) && requestedServiceIds.indexOf(serviceId) === index,
+    );
+
+    if (validServiceIds.length > 0) {
+      setSelected(validServiceIds);
+    }
+  }, []);
+
   const toggle = (id: string) =>
     setSelected((s) => (s.includes(id) ? s.filter((x) => x !== id) : [...s, id]));
   const togglePriceInfo = (id: string) =>

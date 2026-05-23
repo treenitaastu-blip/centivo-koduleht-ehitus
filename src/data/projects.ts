@@ -9,6 +9,7 @@ export type Project = {
   category: string;
   shortDescription: string;
   services: string[];
+  inquiryServiceIds: string[];
   status: string;
   sections: ProjectSection[];
 };
@@ -21,6 +22,7 @@ export const projects: Project[] = [
     shortDescription:
       "Märgfassaadi tööde ülevaade: aluspinna hindamine, ettevalmistus, armeerimine ja viimistlus vastavalt hoone seisukorrale.",
     services: ["Märgfassaad", "ettevalmistus", "viimistlus"],
+    inquiryServiceIds: ["fassaadid"],
     status: "Teenus",
     sections: [
       {
@@ -53,6 +55,7 @@ export const projects: Project[] = [
     shortDescription:
       "Maalritööde teenus koos pindade hindamise, paranduste, pahtelduse, lihvimise, kruntimise ja värvimisega.",
     services: ["Pahteldus", "kruntimine", "värvimine"],
+    inquiryServiceIds: ["maalritood"],
     status: "Teenus",
     sections: [
       {
@@ -85,6 +88,7 @@ export const projects: Project[] = [
     shortDescription:
       "Krohvimistööd aitavad luua sobiva aluspinna edasiseks siseviimistluseks, kui pind vajab suuremat tasandamist või tugevamat aluskihti.",
     services: ["Kipskrohv", "pindade ettevalmistus"],
+    inquiryServiceIds: ["krohvimine"],
     status: "Teenus",
     sections: [
       {
@@ -117,6 +121,7 @@ export const projects: Project[] = [
     shortDescription:
       "Lammutus ja ehitusprügi äravedu aitavad objekti ette valmistada järgmiseks tööetapiks või eraldi korrastustööks.",
     services: ["Lammutus", "koristus", "ehitusprügi äravedu"],
+    inquiryServiceIds: ["lammutus", "prugi"],
     status: "Teenus",
     sections: [
       {
