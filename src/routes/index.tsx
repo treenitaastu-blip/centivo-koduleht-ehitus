@@ -92,6 +92,7 @@ function Index() {
   const [selected, setSelected] = useState<string[]>([]);
   const toggle = (id: string) =>
     setSelected((s) => (s.includes(id) ? s.filter((x) => x !== id) : [...s, id]));
+  const selectedServices = services.filter((service) => selected.includes(service.id));
 
   return (
     <div className="min-h-screen bg-background text-foreground font-body">
@@ -321,10 +322,10 @@ function Index() {
                   Telefon
                 </span>
                 <a
-                  href="tel:+372"
+                  href="tel:+37258299962"
                   className="text-2xl font-display font-bold hover:text-brand-orange transition-colors"
                 >
-                  +372 5XXX XXXX
+                  +372 58299962
                 </a>
               </div>
               <div>
@@ -370,7 +371,7 @@ function Index() {
               const subject = encodeURIComponent("Päring Centivo kodulehelt");
               const body = encodeURIComponent(
                 `Nimi: ${data.get("nimi")}\nKontakt: ${data.get("kontakt")}\n\nValitud teenused: ${
-                  selected.join(", ") || "—"
+                  selectedServices.map((service) => service.title).join(", ") || "—"
                 }\n\nSõnum:\n${data.get("sonum")}`,
               );
               window.location.href = `mailto:info@centivo.ee?subject=${subject}&body=${body}`;
@@ -382,6 +383,26 @@ function Index() {
                 ? `Valitud ${selected.length} teenust — lisame need automaatselt päringusse.`
                 : "Vali eelnevalt teenused või kirjelda oma vajadust allpool."}
             </p>
+            {selectedServices.length > 0 && (
+              <div className="mb-6 rounded-sm border border-[#DED8CE]/20 bg-[#F7F5F1]/5 p-4">
+                <p className="mb-3 text-[10px] font-bold uppercase tracking-widest text-brand-orange">
+                  Valitud teenused
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {selectedServices.map((service) => (
+                    <span
+                      key={service.id}
+                      className="rounded-full border border-brand-orange/40 px-3 py-1 text-xs font-semibold text-[#F7F5F1]"
+                    >
+                      {service.title}
+                    </span>
+                  ))}
+                </div>
+                <p className="mt-3 text-sm text-[#E8E3DA]">
+                  Need teenused lisatakse automaatselt päringusse.
+                </p>
+              </div>
+            )}
             <input
               name="nimi"
               required
@@ -447,6 +468,24 @@ function Index() {
           </div>
         </div>
       </footer>
+
+      {selectedServices.length > 0 && (
+        <div className="fixed inset-x-0 bottom-4 z-40 px-4">
+          <div className="mx-auto flex max-w-xl items-center justify-between gap-4 rounded-full border border-border bg-surface/95 px-4 py-3 shadow-2xl backdrop-blur-md">
+            <span className="text-sm font-bold text-brand-dark">
+              {selectedServices.length === 1
+                ? "1 teenus valitud"
+                : `${selectedServices.length} teenust valitud`}
+            </span>
+            <a
+              href="#kontakt"
+              className="shrink-0 rounded-full bg-brand-orange px-4 py-2 text-xs font-bold uppercase tracking-wider text-primary-foreground transition-colors hover:bg-brand-copper-hover"
+            >
+              Jätka päringuga
+            </a>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
