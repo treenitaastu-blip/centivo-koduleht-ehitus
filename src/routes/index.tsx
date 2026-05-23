@@ -363,7 +363,8 @@ function Index() {
           </div>
 
           <form
-            className="bg-brand-dark text-primary-foreground p-10 space-y-4"
+            id="paring"
+            className="scroll-mt-28 bg-brand-dark text-primary-foreground p-10 space-y-4"
             onSubmit={(e) => {
               e.preventDefault();
               const form = e.currentTarget;
@@ -478,7 +479,7 @@ function Index() {
                 : `${selectedServices.length} teenust valitud`}
             </span>
             <a
-              href="#kontakt"
+              href="#paring"
               className="shrink-0 rounded-full bg-brand-orange px-4 py-2 text-xs font-bold uppercase tracking-wider text-primary-foreground transition-colors hover:bg-brand-copper-hover"
             >
               Jätka päringuga
