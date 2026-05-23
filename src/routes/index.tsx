@@ -361,14 +361,6 @@ function Index() {
                 </span>
                 <span className="text-lg">Tartu, Tartumaa & Lõuna-Eesti</span>
               </div>
-              <div className="flex gap-4 pt-4">
-                <a
-                  href="https://www.instagram.com/centivoehitus/"
-                  className="px-5 py-2.5 border border-brand-dark bg-transparent text-brand-dark font-bold text-xs uppercase tracking-widest hover:bg-brand-dark hover:text-primary-foreground transition-colors"
-                >
-                  Instagram
-                </a>
-              </div>
             </div>
           </div>
 
