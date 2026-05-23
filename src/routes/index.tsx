@@ -77,12 +77,9 @@ const services: Service[] = [
 
 function Index() {
   const [selected, setSelected] = useState<string[]>([]);
-  const [expandedServices, setExpandedServices] = useState<string[]>([]);
   const [priceInfoId, setPriceInfoId] = useState<string | null>(null);
   const toggle = (id: string) =>
     setSelected((s) => (s.includes(id) ? s.filter((x) => x !== id) : [...s, id]));
-  const toggleDetails = (id: string) =>
-    setExpandedServices((ids) => (ids.includes(id) ? ids.filter((x) => x !== id) : [...ids, id]));
   const togglePriceInfo = (id: string) =>
     setPriceInfoId((current) => (current === id ? null : id));
   const selectedServices = services.filter((service) => selected.includes(service.id));
@@ -166,7 +163,6 @@ function Index() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s) => {
               const active = selected.includes(s.id);
-              const expanded = expandedServices.includes(s.id);
               const hasPriceInfo = s.price.includes("€/h");
               const priceInfoOpen = priceInfoId === s.id;
               return (
@@ -210,22 +206,12 @@ function Index() {
                       )}
                     </div>
                   </div>
-                  {expanded && (
-                    <ul className="text-sm text-muted-foreground space-y-2 mb-8">
-                      {s.items.map((it) => (
-                        <li key={it}>• {it}</li>
-                      ))}
-                    </ul>
-                  )}
-                  <div className="mt-8 space-y-3">
-                    <button
-                      type="button"
-                      aria-expanded={expanded}
-                      onClick={() => toggleDetails(s.id)}
-                      className="w-full text-left text-xs font-bold uppercase tracking-widest text-muted-foreground transition-colors hover:text-brand-orange"
-                    >
-                      {expanded ? "Peida detailid" : "Vaata täpsemalt"}
-                    </button>
+                  <ul className="text-sm text-muted-foreground space-y-2 mb-8">
+                    {s.items.map((it) => (
+                      <li key={it}>• {it}</li>
+                    ))}
+                  </ul>
+                  <div className="mt-8">
                     <button
                       type="button"
                       onClick={() => toggle(s.id)}

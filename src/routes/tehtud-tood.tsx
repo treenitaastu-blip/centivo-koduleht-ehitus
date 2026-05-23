@@ -90,7 +90,7 @@ function TehtudTood() {
           </div>
           <div className="mt-8 flex flex-wrap gap-4">
             <a
-              href="/#kontakt"
+              href="/#paring"
               className="px-6 py-3 bg-brand-orange text-primary-foreground font-bold uppercase tracking-wider text-xs rounded-sm hover:bg-brand-copper-hover transition-colors"
             >
               Küsi pakkumist
