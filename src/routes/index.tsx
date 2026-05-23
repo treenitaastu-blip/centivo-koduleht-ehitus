@@ -95,8 +95,8 @@ function Index() {
               Tartu & Lõuna-Eesti
             </div>
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] tracking-tight mb-8 text-brand-dark">
-              KVALITEETNE <br />
-              <span className="text-brand-orange">SISEVIIMISTLUS</span>
+              EHITUSTÖÖD <br />
+              <span className="text-brand-orange">TARTUMAAL</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-md mb-10 leading-relaxed">
               Krohvimine, maalritööd ja fassaadid. 20 aastat kogemust ning paindlik, etapiviisiline
