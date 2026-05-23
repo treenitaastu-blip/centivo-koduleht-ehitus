@@ -13,7 +13,9 @@ import { Route as UudisedRouteImport } from './routes/uudised'
 import { Route as TehtudToodRouteImport } from './routes/tehtud-tood'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as UudisedIndexRouteImport } from './routes/uudised/index'
+import { Route as TehtudToodIndexRouteImport } from './routes/tehtud-tood/index'
 import { Route as UudisedSlugRouteImport } from './routes/uudised/$slug'
+import { Route as TehtudToodSlugRouteImport } from './routes/tehtud-tood/$slug'
 
 const UudisedRoute = UudisedRouteImport.update({
   id: '/uudised',
@@ -35,50 +37,79 @@ const UudisedIndexRoute = UudisedIndexRouteImport.update({
   path: '/',
   getParentRoute: () => UudisedRoute,
 } as any)
+const TehtudToodIndexRoute = TehtudToodIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => TehtudToodRoute,
+} as any)
 const UudisedSlugRoute = UudisedSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
   getParentRoute: () => UudisedRoute,
 } as any)
+const TehtudToodSlugRoute = TehtudToodSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => TehtudToodRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/tehtud-tood': typeof TehtudToodRoute
+  '/tehtud-tood': typeof TehtudToodRouteWithChildren
   '/uudised': typeof UudisedRouteWithChildren
+  '/tehtud-tood/$slug': typeof TehtudToodSlugRoute
   '/uudised/$slug': typeof UudisedSlugRoute
+  '/tehtud-tood/': typeof TehtudToodIndexRoute
   '/uudised/': typeof UudisedIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/tehtud-tood': typeof TehtudToodRoute
+  '/tehtud-tood/$slug': typeof TehtudToodSlugRoute
   '/uudised/$slug': typeof UudisedSlugRoute
+  '/tehtud-tood': typeof TehtudToodIndexRoute
   '/uudised': typeof UudisedIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/tehtud-tood': typeof TehtudToodRoute
+  '/tehtud-tood': typeof TehtudToodRouteWithChildren
   '/uudised': typeof UudisedRouteWithChildren
+  '/tehtud-tood/$slug': typeof TehtudToodSlugRoute
   '/uudised/$slug': typeof UudisedSlugRoute
+  '/tehtud-tood/': typeof TehtudToodIndexRoute
   '/uudised/': typeof UudisedIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/tehtud-tood' | '/uudised' | '/uudised/$slug' | '/uudised/'
+  fullPaths:
+    | '/'
+    | '/tehtud-tood'
+    | '/uudised'
+    | '/tehtud-tood/$slug'
+    | '/uudised/$slug'
+    | '/tehtud-tood/'
+    | '/uudised/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/tehtud-tood' | '/uudised/$slug' | '/uudised'
+  to:
+    | '/'
+    | '/tehtud-tood/$slug'
+    | '/uudised/$slug'
+    | '/tehtud-tood'
+    | '/uudised'
   id:
     | '__root__'
     | '/'
     | '/tehtud-tood'
     | '/uudised'
+    | '/tehtud-tood/$slug'
     | '/uudised/$slug'
+    | '/tehtud-tood/'
     | '/uudised/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  TehtudToodRoute: typeof TehtudToodRoute
+  TehtudToodRoute: typeof TehtudToodRouteWithChildren
   UudisedRoute: typeof UudisedRouteWithChildren
 }
 
@@ -112,6 +143,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UudisedIndexRouteImport
       parentRoute: typeof UudisedRoute
     }
+    '/tehtud-tood/': {
+      id: '/tehtud-tood/'
+      path: '/'
+      fullPath: '/tehtud-tood/'
+      preLoaderRoute: typeof TehtudToodIndexRouteImport
+      parentRoute: typeof TehtudToodRoute
+    }
     '/uudised/$slug': {
       id: '/uudised/$slug'
       path: '/$slug'
@@ -119,8 +157,29 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UudisedSlugRouteImport
       parentRoute: typeof UudisedRoute
     }
+    '/tehtud-tood/$slug': {
+      id: '/tehtud-tood/$slug'
+      path: '/$slug'
+      fullPath: '/tehtud-tood/$slug'
+      preLoaderRoute: typeof TehtudToodSlugRouteImport
+      parentRoute: typeof TehtudToodRoute
+    }
   }
 }
+
+interface TehtudToodRouteChildren {
+  TehtudToodSlugRoute: typeof TehtudToodSlugRoute
+  TehtudToodIndexRoute: typeof TehtudToodIndexRoute
+}
+
+const TehtudToodRouteChildren: TehtudToodRouteChildren = {
+  TehtudToodSlugRoute: TehtudToodSlugRoute,
+  TehtudToodIndexRoute: TehtudToodIndexRoute,
+}
+
+const TehtudToodRouteWithChildren = TehtudToodRoute._addFileChildren(
+  TehtudToodRouteChildren,
+)
 
 interface UudisedRouteChildren {
   UudisedSlugRoute: typeof UudisedSlugRoute
@@ -137,7 +196,7 @@ const UudisedRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  TehtudToodRoute: TehtudToodRoute,
+  TehtudToodRoute: TehtudToodRouteWithChildren,
   UudisedRoute: UudisedRouteWithChildren,
 }
 export const routeTree = rootRouteImport
