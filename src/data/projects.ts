@@ -147,6 +147,46 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    title: "Ehitusjärgne koristus",
+    slug: "ehitusjargne-koristus",
+    category: "Koristus",
+    shortDescription:
+      "Põhjalik koristus pärast ehitus- või remonditööd, et ruumid oleks valmis koheseks kasutuseks.",
+    services: ["Ehitusjärgne koristus", "Remondijärgne koristus", "Ruumide ettevalmistus"],
+    inquiryServiceIds: ["ehitusjargne-koristus"],
+    status: "Teenus",
+    sections: [
+      {
+        title: "Millal on ehitusjärgne koristus vajalik?",
+        paragraphs: [
+          "Ehitusjärgne koristus on vajalik pärast ehitus-, remondi- või viimistlustöid, kui ruumidesse jääb tolmu, materjalijääke ja üldist ehitusmustust. Ka siis, kui põhitöö on valmis, vajavad pinnad sageli eraldi korrastamist enne ruumide kasutamist.",
+          "Eesmärk on teha ruumid kasutamiseks valmis selge ja praktilise koristusetapiga. Töö täpne maht sõltub sellest, milliseid töid objektil tehti ja millises seisus ruumid pärast seda on.",
+        ],
+      },
+      {
+        title: "Mida töö võib sisaldada?",
+        paragraphs: [
+          "Töö võib sisaldada ehitustolmu eemaldamist pindadelt, põrandate ja nähtavate pindade puhastamist ning tööala korrastamist nii, et ruum oleks kasutatav. Vajadusel saab koristuse siduda viimistlus- või remonditööde viimase etapiga.",
+          "Lõplik töömaht lepitakse kokku vastavalt objekti seisukorrale. Mõnel juhul piisab üldisest korrastamisest, teisel juhul on vaja põhjalikumat pindade puhastamist ja tööala ettevalmistamist kasutuseks.",
+        ],
+      },
+      {
+        title: "Kellele see teenus sobib?",
+        paragraphs: [
+          "Ehitusjärgne koristus sobib eraisikutele, ettevõtetele ja korteriühistutele, kelle ruumid vajavad korrastamist pärast remonti, viimistlust või ehitustöid. Teenust saab tellida ka eraldi viimase etapina, kui põhitööd on juba tehtud.",
+          "Koristus võib olla vajalik pärast krohvimist, pahteldamist, värvimist, lammutust või muid siseviimistlustöid, kus siseruumidesse jääb tolmu ja tööjälgi. Vajaduse saab hinnata objekti kirjelduse või fotode põhjal.",
+        ],
+      },
+      {
+        title: "Kuidas pakkumist küsida?",
+        paragraphs: [
+          "Pakkumise küsimisel tasub kirjeldada objekti, milliseid töid seal tehti ja millises seisus ruumid praegu on. Kui võimalik, lisa info ruumide arvu, ligikaudse suuruse ja ligipääsu kohta.",
+          "Lõplik pakkumine sõltub töö mahust, objekti seisukorrast ja kokkulepitud ootustest. Teenuse päringu nupp viib kontaktvormile, kus ehitusjärgne koristus lisatakse valitud teenusena päringusse.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getProjectBySlug(slug: string) {
