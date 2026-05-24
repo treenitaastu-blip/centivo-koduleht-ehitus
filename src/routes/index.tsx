@@ -89,6 +89,9 @@ const serviceIds = new Set(services.map((service) => service.id));
 
 function Index() {
   const [selected, setSelected] = useState<string[]>([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
 
   useEffect(() => {
     const requestedServiceIds = new URLSearchParams(window.location.search).getAll("teenus");
@@ -344,17 +347,58 @@ function Index() {
           <form
             id="paring"
             className="scroll-mt-28 bg-brand-dark text-primary-foreground p-10 space-y-4"
-            onSubmit={(e) => {
+            onSubmit={async (e) => {
               e.preventDefault();
               const form = e.currentTarget;
               const data = new FormData(form);
-              const subject = encodeURIComponent("Päring Centivo kodulehelt");
-              const body = encodeURIComponent(
-                `Nimi: ${data.get("nimi")}\nKontakt: ${data.get("kontakt")}\n\nValitud teenused: ${
-                  selectedServices.map((service) => service.title).join(", ") || "—"
-                }\n\nSõnum:\n${data.get("sonum")}`,
+
+              if (data.get("botcheck")) {
+                return;
+              }
+
+              setIsSubmitting(true);
+              setSubmitMessage("");
+              setSubmitStatus(null);
+
+              const contact = data.get("kontakt")?.toString() ?? "";
+              const phone = data.get("phone")?.toString() || data.get("telefon")?.toString();
+              const asukoht = data.get("asukoht")?.toString() || data.get("location")?.toString();
+              data.append("access_key", "765e1072-cdd0-498b-ac3a-86ade8db85af");
+              data.append("subject", "Uus päring Centivo kodulehelt");
+              data.append("from_name", "Centivo koduleht");
+              data.append("name", data.get("nimi")?.toString() ?? "");
+              data.append("email", contact);
+              if (phone) data.append("phone", phone);
+              if (asukoht) data.append("asukoht", asukoht);
+              data.append("message", data.get("sonum")?.toString() ?? "");
+              data.append(
+                "valitud_teenused",
+                selectedServices.map((service) => service.title).join(", ") || "—",
               );
-              window.location.href = `mailto:centivoehitus@gmail.com?subject=${subject}&body=${body}`;
+
+              try {
+                const response = await fetch("https://api.web3forms.com/submit", {
+                  method: "POST",
+                  body: data,
+                });
+                const result = (await response.json()) as { success?: boolean };
+
+                if (!response.ok || !result.success) {
+                  throw new Error("Web3Forms submission failed");
+                }
+
+                form.reset();
+                setSubmitStatus("success");
+                setSubmitMessage("Aitäh! Päring on saadetud. Võtame teiega ühendust.");
+              } catch (error) {
+                console.error(error);
+                setSubmitStatus("error");
+                setSubmitMessage(
+                  "Päringu saatmine ebaõnnestus. Palun proovige uuesti või võtke ühendust telefoni teel.",
+                );
+              } finally {
+                setIsSubmitting(false);
+              }
             }}
           >
             <h3 className="font-display text-2xl font-bold mb-2">Saada päring</h3>
@@ -383,6 +427,7 @@ function Index() {
                 </p>
               </div>
             )}
+            <input type="text" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
             <input
               name="nimi"
               required
@@ -404,10 +449,20 @@ function Index() {
             />
             <button
               type="submit"
-              className="w-full py-4 bg-brand-orange text-accent-foreground font-bold uppercase tracking-widest text-sm hover:bg-brand-copper-hover transition-all"
+              disabled={isSubmitting}
+              className="w-full py-4 bg-brand-orange text-accent-foreground font-bold uppercase tracking-widest text-sm hover:bg-brand-copper-hover transition-all disabled:cursor-not-allowed disabled:opacity-70"
             >
-              Saada päring
+              {isSubmitting ? "Saadan..." : "Saada päring"}
             </button>
+            {submitMessage ? (
+              <p
+                className={`text-sm ${
+                  submitStatus === "success" ? "text-[#E8E3DA]" : "text-brand-orange"
+                }`}
+              >
+                {submitMessage}
+              </p>
+            ) : null}
           </form>
         </div>
       </section>
