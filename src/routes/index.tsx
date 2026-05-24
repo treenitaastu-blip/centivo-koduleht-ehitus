@@ -68,6 +68,16 @@ const services: Service[] = [
     items: ["Kiire utiliseerimine", "Konteinerid vastavalt vajadusele", "Hoiame objekti puhtana"],
   },
   {
+    id: "ehitusjargne-koristus",
+    title: "Ehitusjärgne koristus",
+    price: "Küsi hinnapakkumist",
+    items: [
+      "Põhjalik koristus pärast ehitus- või remonditööd",
+      "Ruumide ettevalmistus koheseks kasutuseks",
+      "Sobib pärast viimistlus-, remondi- või ehitustöid",
+    ],
+  },
+  {
     id: "noustamine",
     title: "Nõustamine & hindamine",
     price: "Küsi hinnapakkumist",
@@ -464,6 +474,7 @@ function Index() {
                 <li>Märgfassaadi tööd</li>
                 <li>Lammutus</li>
                 <li>Ehitusprügi äravedu</li>
+                <li>Ehitusjärgne koristus</li>
               </ul>
             </div>
 
