@@ -432,20 +432,20 @@ function Index() {
               name="nimi"
               required
               placeholder="Sinu nimi"
-              className="w-full bg-brand-zinc border-none p-4 text-sm text-primary-foreground focus:ring-2 focus:ring-brand-orange focus:outline-none placeholder:text-[#E8E3DA]/70"
+              className="w-full bg-brand-zinc border-none p-4 text-base md:text-sm text-primary-foreground focus:ring-2 focus:ring-brand-orange focus:outline-none placeholder:text-[#E8E3DA]/70"
             />
             <input
               name="kontakt"
               required
               placeholder="E-post või telefon"
-              className="w-full bg-brand-zinc border-none p-4 text-sm text-primary-foreground focus:ring-2 focus:ring-brand-orange focus:outline-none placeholder:text-[#E8E3DA]/70"
+              className="w-full bg-brand-zinc border-none p-4 text-base md:text-sm text-primary-foreground focus:ring-2 focus:ring-brand-orange focus:outline-none placeholder:text-[#E8E3DA]/70"
             />
             <textarea
               name="sonum"
               rows={4}
               required
               placeholder="Kirjelda lühidalt oma objekti ja tööde mahtu"
-              className="w-full bg-brand-zinc border-none p-4 text-sm text-primary-foreground focus:ring-2 focus:ring-brand-orange focus:outline-none placeholder:text-[#E8E3DA]/70 resize-none"
+              className="w-full bg-brand-zinc border-none p-4 text-base md:text-sm text-primary-foreground focus:ring-2 focus:ring-brand-orange focus:outline-none placeholder:text-[#E8E3DA]/70 resize-none"
             />
             <button
               type="submit"
