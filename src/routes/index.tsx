@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Centivo Siseviimistlus pakub kvaliteetset krohvimist, maalritöid ja fassaaditöid Tartus ja Lõuna-Eestis. 20 aastat kogemust, paindlik etapiviisiline teostus. Hinnad alates 25€/h.",
+          "Centivo Siseviimistlus pakub kvaliteetset krohvimist, maalritöid ja fassaaditöid Tartus ja Lõuna-Eestis. 20 aastat kogemust, paindlik etapiviisiline teostus. Küsi personaalset hinnapakkumist vastavalt objektile.",
       },
       { property: "og:title", content: "Centivo Siseviimistlus — Tartu" },
       {
@@ -40,37 +40,37 @@ const services: Service[] = [
   {
     id: "krohvimine",
     title: "Krohvimine",
-    price: "25€/h*",
+    price: "Küsi hinnapakkumist",
     items: ["Kipskrohv (MP75)", "Tsementkrohv", "Masin- ja käsitsi krohvimine"],
   },
   {
     id: "maalritood",
     title: "Maalritööd",
-    price: "25€/h*",
+    price: "Küsi hinnapakkumist",
     items: ["Pahteldamine", "Värvimine", "Dekoratiivviimistlus"],
   },
   {
     id: "fassaadid",
     title: "Fassaaditööd",
-    price: "Kokkuleppel",
+    price: "Küsi hinnapakkumist",
     items: ["Märgfassaadid", "Soojustamine", "Viimistluskrohv"],
   },
   {
     id: "lammutus",
     title: "Lammutustööd",
-    price: "25€/h*",
+    price: "Küsi hinnapakkumist",
     items: ["Sisetööde lammutus", "Pinna ettevalmistus", "Ohutu teostus"],
   },
   {
     id: "prugi",
     title: "Ehitusprügi äravedu",
-    price: "Objektipõhine",
-    items: ["Kiire utiliseerimine", "Konteinerid kokkuleppel", "Hoiame objekti puhtana"],
+    price: "Küsi hinnapakkumist",
+    items: ["Kiire utiliseerimine", "Konteinerid vastavalt vajadusele", "Hoiame objekti puhtana"],
   },
   {
     id: "noustamine",
     title: "Nõustamine & hindamine",
-    price: "Tasuta päring",
+    price: "Küsi hinnapakkumist",
     items: ["Individuaalne hinnang", "Etapiviisiline plaan", "Materjalide soovitused"],
   },
 ];
@@ -79,7 +79,6 @@ const serviceIds = new Set(services.map((service) => service.id));
 
 function Index() {
   const [selected, setSelected] = useState<string[]>([]);
-  const [priceInfoId, setPriceInfoId] = useState<string | null>(null);
 
   useEffect(() => {
     const requestedServiceIds = new URLSearchParams(window.location.search).getAll("teenus");
@@ -95,8 +94,6 @@ function Index() {
 
   const toggle = (id: string) =>
     setSelected((s) => (s.includes(id) ? s.filter((x) => x !== id) : [...s, id]));
-  const togglePriceInfo = (id: string) =>
-    setPriceInfoId((current) => (current === id ? null : id));
   const selectedServices = services.filter((service) => selected.includes(service.id));
 
   return (
@@ -124,11 +121,8 @@ function Index() {
               >
                 Vaata teenuseid
               </a>
-              <div className="flex flex-col">
-                <span className="text-xs uppercase text-muted-foreground font-bold tracking-widest">
-                  Alates
-                </span>
-                <span className="text-2xl font-display font-bold text-brand-orange">25€/h</span>
+              <div className="text-sm font-bold uppercase tracking-widest text-brand-orange">
+                Küsi hinnapakkumist
               </div>
             </div>
           </div>
@@ -161,8 +155,8 @@ function Index() {
                 Vali vajalik teenus
               </h2>
               <p className="text-muted-foreground max-w-xl">
-                Hinnad on orienteeruvad ja sõltuvad objektist. Märgi teenused, mida vajad — koostame
-                personaalse pakkumise.
+                Märgi teenused, mida vajad — koostame personaalse hinnapakkumise vastavalt
+                objektile.
               </p>
             </div>
           </div>
@@ -170,8 +164,6 @@ function Index() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s) => {
               const active = selected.includes(s.id);
-              const hasPriceInfo = s.price.includes("€/h");
-              const priceInfoOpen = priceInfoId === s.id;
               return (
                 <article
                   key={s.id}
@@ -189,28 +181,9 @@ function Index() {
                       </h3>
                     </div>
                     <div className="text-right">
-                      <div className="flex items-center justify-end gap-2">
-                        <span className="text-xl font-display font-bold text-brand-orange">
-                          {s.price}
-                        </span>
-                        {hasPriceInfo && (
-                          <button
-                            type="button"
-                            aria-label="Hinna selgitus"
-                            aria-expanded={priceInfoOpen}
-                            onClick={() => togglePriceInfo(s.id)}
-                            className="flex size-6 items-center justify-center rounded-full border border-border text-xs font-bold text-muted-foreground transition-colors hover:border-brand-orange hover:text-brand-orange"
-                          >
-                            ?
-                          </button>
-                        )}
-                      </div>
-                      {priceInfoOpen && (
-                        <p className="mt-3 max-w-[14rem] text-left text-xs leading-relaxed text-muted-foreground">
-                          Hind on eeldatav. Lõplik hind selgub kokkuleppel vastavalt töö mahule,
-                          objektile ja tingimustele.
-                        </p>
-                      )}
+                      <span className="text-xl font-display font-bold text-brand-orange">
+                        {s.price}
+                      </span>
                     </div>
                   </div>
                   <ul className="text-sm text-muted-foreground space-y-2 mb-8">
@@ -237,8 +210,7 @@ function Index() {
           </div>
 
           <p className="text-xs text-muted-foreground mt-8 max-w-3xl">
-            * Orienteeruv miinimum tunnihind. Lõplik maksumus sõltub objektist, materjalidest ja
-            töömahust. Suurematele objektidele teeme fikseeritud pakkumise.
+            Hinnapakkumine sõltub töö mahust, objektist ja tingimustest.
           </p>
         </div>
       </section>
@@ -287,7 +259,7 @@ function Index() {
                     Tartu & Lõuna-Eesti
                   </h4>
                   <p className="text-sm text-muted-foreground">
-                    Peamine tööpiirkond. Kokkuleppel teostame töid ka kaugemal — võta ühendust.
+                    Peamine tööpiirkond. Vajadusel teostame töid ka kaugemal — võta ühendust.
                   </p>
                 </div>
               </div>
