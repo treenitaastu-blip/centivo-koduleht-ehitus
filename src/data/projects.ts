@@ -17,7 +17,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: "Märgfassaadi tööd",
-    slug: "fassaaditood-tartus",
+    slug: "margfassaadi-tood",
     category: "Fassaaditööd",
     shortDescription:
       "Märgfassaadi tööde ülevaade: aluspinna hindamine, ettevalmistus, armeerimine ja viimistlus vastavalt hoone seisukorrale.",
@@ -50,7 +50,7 @@ export const projects: Project[] = [
   },
   {
     title: "Maalritööd ja pindade ettevalmistus",
-    slug: "maalritood-haagel",
+    slug: "maalritood-ja-pindade-ettevalmistus",
     category: "Maalritööd",
     shortDescription:
       "Maalritööde teenus koos pindade hindamise, paranduste, pahtelduse, lihvimise, kruntimise ja värvimisega.",
@@ -83,7 +83,7 @@ export const projects: Project[] = [
   },
   {
     title: "Krohvimistööd siseviimistluses",
-    slug: "krohvimistood-tartumaal",
+    slug: "krohvimistood-siseviimistluses",
     category: "Krohvimine",
     shortDescription:
       "Krohvimistööd aitavad luua sobiva aluspinna edasiseks siseviimistluseks, kui pind vajab suuremat tasandamist või tugevamat aluskihti.",

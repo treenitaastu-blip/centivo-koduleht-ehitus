@@ -29,9 +29,7 @@ export function SiteHeader() {
             </span>
           </button>
           <a href="/" className="hidden items-center gap-2 md:flex">
-            <div className="size-8 bg-brand-orange rounded-sm flex items-center justify-center text-accent-foreground font-bold font-display">
-              C
-            </div>
+            <img src="/centivo-logo.png" alt="Centivo OÜ logo" className="size-8 object-contain" />
             <span className="font-display text-xl font-bold tracking-tight uppercase">Centivo</span>
           </a>
           <a
