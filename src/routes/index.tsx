@@ -254,8 +254,8 @@ function Index() {
               </h2>
               <p className="text-muted-foreground leading-relaxed">
                 Centivo ei ole järjekordne ehitusbrigaad. Meie meeskonnal on 20 aastat kogemust
-                siseviimistluse valdkonnas. Võtame vastu vaid tööd, mida oleme võimelised teostama
-                kõrgeima standardiga — kuulame klienti ja pakume individuaalse lahenduse.
+                siseviimistluse valdkonnas. Pakume läbimõeldud ja kvaliteetseid lahendusi, lähtudes
+                iga kliendi soovidest.
               </p>
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="p-6 bg-surface-muted border border-border">
@@ -279,7 +279,7 @@ function Index() {
                     Kõigile klientidele
                   </h4>
                   <p className="text-sm text-muted-foreground">
-                    Eraisikud, ettevõtted ja korteriühistud — leiame lahenduse pea kõigile.
+                    Eraisikud, ettevõtted ja korteriühistud — leiame kõigi jaoks sobiva lahenduse.
                   </p>
                 </div>
                 <div className="p-6 bg-surface-muted border border-border">
@@ -522,13 +522,17 @@ function Index() {
                   Kontakt
                 </a>
                 <a
-                  href="https://www.instagram.com/centivoehitus/"
+                  href="https://www.instagram.com/centivoest/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="pt-2 font-bold uppercase tracking-widest text-brand-orange transition-colors hover:text-primary-foreground"
                 >
-                  Instagram
+                  @centivoest
                 </a>
                 <a
                   href="https://www.facebook.com/CentivoEhitus"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="font-bold uppercase tracking-widest text-brand-orange transition-colors hover:text-primary-foreground"
                 >
                   Facebook

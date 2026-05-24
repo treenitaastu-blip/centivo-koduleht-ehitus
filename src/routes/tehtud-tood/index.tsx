@@ -31,6 +31,9 @@ function TehtudTood() {
             Teenuste kirjeldused aitavad paremini mõista tööde sisu, võimalikke
             etappe ja seda, millist infot on pakkumise küsimisel kasulik jagada.
           </p>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            Meie tehtud töid saab vaadata Instagramis @centivoest
+          </p>
           <p className="mt-6 text-sm font-bold uppercase tracking-widest text-brand-dark">
             20 aastat kogemust | Tartu ja Lõuna-Eesti | Tööd etappide kaupa
           </p>
