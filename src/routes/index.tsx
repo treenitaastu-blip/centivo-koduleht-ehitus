@@ -190,11 +190,6 @@ function Index() {
                         {s.title}
                       </h3>
                     </div>
-                    <div className="text-right">
-                      <span className="text-xl font-display font-bold text-brand-orange">
-                        {s.price}
-                      </span>
-                    </div>
                   </div>
                   <ul className="text-sm text-muted-foreground space-y-2 mb-8">
                     {s.items.map((it) => (
@@ -510,7 +505,7 @@ function Index() {
                   rel="noopener noreferrer"
                   className="pt-2 font-bold uppercase tracking-widest text-brand-orange transition-colors hover:text-primary-foreground"
                 >
-                  @centivoest
+                  Instagram
                 </a>
                 <a
                   href="https://www.facebook.com/CentivoEhitus"
