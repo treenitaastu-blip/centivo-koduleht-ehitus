@@ -473,7 +473,7 @@ function Index() {
           <div className="grid gap-10 border-b border-[#DED8CE]/20 pb-12 md:grid-cols-2 lg:grid-cols-4">
             <div className="lg:col-span-1">
               <div className="flex items-center gap-2 mb-3">
-                <div className="size-6 bg-brand-orange rounded-sm" />
+                <img src="/centivo-logo.png" alt="Centivo OÜ logo" className="size-6 object-contain" />
                 <span className="font-display text-lg font-bold tracking-tight uppercase">
                   Centivo OÜ
                 </span>
