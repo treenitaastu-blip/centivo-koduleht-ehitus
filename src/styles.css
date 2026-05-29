@@ -34,6 +34,7 @@
   --color-brand-zinc: var(--brand-zinc);
   --color-brand-silver: var(--brand-silver);
   --color-dark-panel-muted: var(--dark-panel-muted);
+  --color-footer-background: var(--footer-background);
   --color-surface: var(--surface);
   --color-surface-muted: var(--surface-muted);
   --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
@@ -49,6 +50,7 @@
   --brand-zinc: #082B52;
   --brand-silver: #B8C0C8;
   --dark-panel-muted: #D7DEE6;
+  --footer-background: #041827;
   --surface: #ffffff;
   --surface-muted: #E9EDF1;
 
@@ -91,5 +93,50 @@
   h3,
   h4 {
     font-family: var(--font-display);
+  }
+}
+
+.hero-blueprint-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(11, 61, 115, 0.12), transparent 34%),
+    radial-gradient(circle at 72% 70%, rgba(245, 180, 0, 0.1), transparent 16%),
+    linear-gradient(90deg, rgba(11, 61, 115, 0.055) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(11, 61, 115, 0.045) 1px, transparent 1px),
+    linear-gradient(135deg, transparent 0 44%, rgba(11, 61, 115, 0.055) 44.2% 44.8%, transparent 45% 100%),
+    linear-gradient(25deg, transparent 0 57%, rgba(184, 192, 200, 0.16) 57.2% 57.8%, transparent 58% 100%);
+  background-position:
+    center,
+    center,
+    right top,
+    right top,
+    right center,
+    right center;
+  background-size:
+    auto,
+    auto,
+    44px 44px,
+    44px 44px,
+    520px 520px,
+    620px 620px;
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.12) 34%, rgba(0, 0, 0, 0.7) 58%, rgba(0, 0, 0, 0.9) 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.12) 34%, rgba(0, 0, 0, 0.7) 58%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+@media (max-width: 767px) {
+  .hero-blueprint-bg {
+    opacity: 0.45;
+    background-size:
+      auto,
+      auto,
+      56px 56px,
+      56px 56px,
+      420px 420px,
+      500px 500px;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.42) 100%);
+    -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.42) 100%);
   }
 }

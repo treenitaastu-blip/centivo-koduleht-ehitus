@@ -113,7 +113,8 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground font-body">
       {/* Hero */}
       <header className="relative px-6 py-20 lg:py-32 overflow-hidden">
-        <div className="mx-auto max-w-7xl grid lg:grid-cols-2 gap-12 items-center">
+        <div aria-hidden="true" className="hero-blueprint-bg" />
+        <div className="relative z-10 mx-auto max-w-7xl grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-muted text-brand-dark text-xs font-bold uppercase tracking-widest mb-6">
               <span className="size-2 bg-brand-orange rounded-full" />
@@ -134,9 +135,12 @@ function Index() {
               >
                 Vaata teenuseid
               </a>
-              <div className="text-sm font-bold uppercase tracking-widest text-brand-dark transition-colors hover:text-brand-orange">
+              <a
+                href="/#paring"
+                className="text-sm font-bold uppercase tracking-widest text-brand-dark transition-colors hover:text-brand-orange"
+              >
                 Küsi hinnapakkumist
-              </div>
+              </a>
             </div>
           </div>
           <div className="relative">
@@ -468,7 +472,7 @@ function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-brand-dark text-primary-foreground py-14 border-t border-brand-dark">
+      <footer className="bg-footer-background text-primary-foreground py-14 border-t border-footer-background">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-10 border-b border-dark-panel-muted/20 pb-12 md:grid-cols-2 lg:grid-cols-4">
             <div className="lg:col-span-1">
