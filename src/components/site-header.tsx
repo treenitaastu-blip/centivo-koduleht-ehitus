@@ -34,8 +34,9 @@ export function SiteHeader() {
           </a>
           <a
             href="/"
-            className="justify-self-center font-display text-xl font-bold tracking-tight uppercase md:hidden"
+            className="flex items-center gap-2 justify-self-center font-display text-xl font-bold tracking-tight uppercase md:hidden"
           >
+            <img src="/centivo-logo.png" alt="" className="size-6 object-contain" />
             Centivo
           </a>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-wider">
