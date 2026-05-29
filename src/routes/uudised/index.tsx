@@ -20,7 +20,7 @@ function Uudised() {
     <main className="min-h-screen bg-background text-foreground px-6 py-24">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
-          <p className="mb-4 text-xs font-bold uppercase tracking-widest text-brand-orange">
+          <p className="mb-4 text-xs font-bold uppercase tracking-widest text-brand-dark">
             Centivo nõuanded
           </p>
           <h1 className="font-display text-4xl md:text-5xl font-bold tracking-tight text-brand-dark">
@@ -39,7 +39,7 @@ function Uudised() {
               className="border border-border bg-surface p-8 shadow-sm"
             >
               <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
-                <span className="rounded-full bg-brand-orange/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand-orange">
+                <span className="rounded-full bg-brand-orange/15 px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand-dark">
                   {post.category}
                 </span>
                 <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
@@ -75,7 +75,7 @@ function Uudised() {
             <h2 className="font-display text-3xl font-bold tracking-tight">
               Vajad nõu oma objekti osas?
             </h2>
-            <p className="mt-4 text-[#E8E3DA] leading-relaxed">
+            <p className="mt-4 text-dark-panel-muted leading-relaxed">
               Kirjelda oma olukorda ja aitame hinnata, milline töö või etapp oleks
               mõistlik esimesena ette võtta.
             </p>
@@ -83,13 +83,13 @@ function Uudised() {
           <div className="mt-8 flex flex-wrap gap-4">
             <a
               href="/#paring"
-              className="px-6 py-3 bg-brand-orange text-primary-foreground font-bold uppercase tracking-wider text-xs rounded-sm hover:bg-brand-copper-hover transition-colors"
+              className="px-6 py-3 bg-brand-orange text-brand-zinc font-bold uppercase tracking-wider text-xs rounded-sm hover:bg-brand-copper-hover transition-colors"
             >
               Küsi pakkumist
             </a>
             <a
               href="/"
-              className="px-6 py-3 border border-[#DED8CE]/40 text-primary-foreground font-bold uppercase tracking-wider text-xs rounded-sm hover:bg-primary-foreground hover:text-brand-dark transition-colors"
+              className="px-6 py-3 border border-dark-panel-muted/40 text-primary-foreground font-bold uppercase tracking-wider text-xs rounded-sm hover:bg-primary-foreground hover:text-brand-dark transition-colors"
             >
               Tagasi avalehele
             </a>

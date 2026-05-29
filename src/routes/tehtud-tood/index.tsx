@@ -20,7 +20,7 @@ function TehtudTood() {
     <main className="min-h-screen bg-background text-foreground px-6 py-24">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
-          <p className="mb-4 text-xs font-bold uppercase tracking-widest text-brand-orange">
+          <p className="mb-4 text-xs font-bold uppercase tracking-widest text-brand-dark">
             Centivo teenused
           </p>
           <h1 className="font-display text-4xl md:text-5xl font-bold tracking-tight text-brand-dark">
@@ -46,7 +46,7 @@ function TehtudTood() {
               className="border border-border bg-surface p-8 shadow-sm"
             >
               <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
-                <span className="rounded-full bg-brand-orange/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand-orange">
+                <span className="rounded-full bg-brand-orange/15 px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand-dark">
                   {project.status}
                 </span>
               </div>
@@ -62,7 +62,7 @@ function TehtudTood() {
               </p>
 
               <div className="mt-8">
-                <p className="mb-3 text-xs font-bold uppercase tracking-widest text-brand-orange">
+                <p className="mb-3 text-xs font-bold uppercase tracking-widest text-brand-dark">
                   Teenused
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -95,7 +95,7 @@ function TehtudTood() {
             <h2 className="font-display text-3xl font-bold tracking-tight">
               Soovid teenuse kohta pakkumist?
             </h2>
-            <p className="mt-4 text-[#E8E3DA] leading-relaxed">
+            <p className="mt-4 text-dark-panel-muted leading-relaxed">
               Kirjelda oma objekti ja aitame hinnata, milline tööde maht või etapp oleks
               mõistlik.
             </p>
@@ -103,13 +103,13 @@ function TehtudTood() {
           <div className="mt-8 flex flex-wrap gap-4">
             <a
               href="/#paring"
-              className="px-6 py-3 bg-brand-orange text-primary-foreground font-bold uppercase tracking-wider text-xs rounded-sm hover:bg-brand-copper-hover transition-colors"
+              className="px-6 py-3 bg-brand-orange text-brand-zinc font-bold uppercase tracking-wider text-xs rounded-sm hover:bg-brand-copper-hover transition-colors"
             >
               Küsi pakkumist
             </a>
             <a
               href="/"
-              className="px-6 py-3 border border-[#DED8CE]/40 text-primary-foreground font-bold uppercase tracking-wider text-xs rounded-sm hover:bg-primary-foreground hover:text-brand-dark transition-colors"
+              className="px-6 py-3 border border-dark-panel-muted/40 text-primary-foreground font-bold uppercase tracking-wider text-xs rounded-sm hover:bg-primary-foreground hover:text-brand-dark transition-colors"
             >
               Tagasi avalehele
             </a>

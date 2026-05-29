@@ -40,7 +40,7 @@ function TehtudTooDetail() {
       <article className="mx-auto max-w-4xl">
         <header>
           <div className="flex flex-wrap items-center gap-3">
-            <span className="rounded-full bg-brand-orange/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand-orange">
+            <span className="rounded-full bg-brand-orange/15 px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand-dark">
               {project.status}
             </span>
             <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
@@ -56,7 +56,7 @@ function TehtudTooDetail() {
           </p>
 
           <div className="mt-8">
-            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-brand-orange">
+            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-brand-dark">
               Teenused
             </p>
             <div className="flex flex-wrap gap-2">
@@ -98,7 +98,7 @@ function TehtudTooDetail() {
           <h2 className="font-display text-3xl font-bold tracking-tight">
             Soovid seda teenust tellida?
           </h2>
-          <p className="mt-4 text-[#E8E3DA] leading-relaxed">
+          <p className="mt-4 text-dark-panel-muted leading-relaxed">
             Kirjelda oma objekti ja aitame hinnata, milline tööde maht või etapp oleks
             mõistlik.
           </p>
@@ -106,13 +106,13 @@ function TehtudTooDetail() {
         <div className="mt-8 flex flex-wrap gap-4">
           <a
             href={inquiryHref}
-            className="px-6 py-3 bg-brand-orange text-primary-foreground font-bold uppercase tracking-wider text-xs rounded-sm hover:bg-brand-copper-hover transition-colors"
+            className="px-6 py-3 bg-brand-orange text-brand-zinc font-bold uppercase tracking-wider text-xs rounded-sm hover:bg-brand-copper-hover transition-colors"
           >
             Küsi pakkumist
           </a>
           <a
             href="/tehtud-tood"
-            className="px-6 py-3 border border-[#DED8CE]/40 text-primary-foreground font-bold uppercase tracking-wider text-xs rounded-sm hover:bg-primary-foreground hover:text-brand-dark transition-colors"
+            className="px-6 py-3 border border-dark-panel-muted/40 text-primary-foreground font-bold uppercase tracking-wider text-xs rounded-sm hover:bg-primary-foreground hover:text-brand-dark transition-colors"
           >
             Tagasi teenuste juurde
           </a>

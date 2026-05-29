@@ -115,13 +115,13 @@ function Index() {
       <header className="relative px-6 py-20 lg:py-32 overflow-hidden">
         <div className="mx-auto max-w-7xl grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-muted text-muted-foreground text-xs font-bold uppercase tracking-widest mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-muted text-brand-dark text-xs font-bold uppercase tracking-widest mb-6">
               <span className="size-2 bg-brand-orange rounded-full" />
               Tartu & Lõuna-Eesti
             </div>
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] tracking-tight mb-8 text-brand-dark">
               EHITUSTÖÖD <br />
-              <span className="text-brand-orange">TARTUMAAL</span>
+              <span className="text-brand-dark">TARTUMAAL</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-md mb-10 leading-relaxed">
               Krohvimine, maalritööd ja fassaadid. 20 aastat kogemust ning paindlik, etapiviisiline
@@ -130,11 +130,11 @@ function Index() {
             <div className="flex flex-wrap items-center gap-6">
               <a
                 href="#teenused"
-                className="px-8 py-4 bg-brand-orange text-primary-foreground font-bold rounded-sm hover:bg-brand-copper-hover transition-all uppercase tracking-wider text-sm"
+                className="px-8 py-4 bg-brand-orange text-brand-zinc font-bold rounded-sm hover:bg-brand-copper-hover transition-all uppercase tracking-wider text-sm"
               >
                 Vaata teenuseid
               </a>
-              <div className="text-sm font-bold uppercase tracking-widest text-brand-orange">
+              <div className="text-sm font-bold uppercase tracking-widest text-brand-dark transition-colors hover:text-brand-orange">
                 Küsi hinnapakkumist
               </div>
             </div>
@@ -183,7 +183,7 @@ function Index() {
                   className={`bg-surface p-8 border transition-all ${
                     active
                       ? "border-brand-orange ring-2 ring-brand-orange/30"
-                      : "border-border hover:border-brand-orange/60"
+                      : "border-border hover:border-brand-dark/40"
                   }`}
                 >
                   <div className="mb-6 flex items-start justify-between gap-4">
@@ -205,7 +205,7 @@ function Index() {
                       onClick={() => toggle(s.id)}
                       className={`w-full py-3 border text-center font-bold text-xs uppercase tracking-widest transition-all ${
                         active
-                          ? "bg-brand-orange text-primary-foreground border-brand-orange"
+                          ? "bg-brand-orange text-brand-zinc border-brand-orange"
                           : "border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-primary-foreground hover:border-brand-dark"
                       }`}
                     >
@@ -239,7 +239,7 @@ function Index() {
               </p>
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="p-6 bg-surface-muted border border-border">
-                  <h4 className="font-bold mb-2 uppercase text-xs tracking-widest text-brand-orange">
+                  <h4 className="font-bold mb-2 uppercase text-xs tracking-widest text-brand-dark">
                     Paindlikkus
                   </h4>
                   <p className="text-sm text-muted-foreground">
@@ -247,7 +247,7 @@ function Index() {
                   </p>
                 </div>
                 <div className="p-6 bg-surface-muted border border-border">
-                  <h4 className="font-bold mb-2 uppercase text-xs tracking-widest text-brand-orange">
+                  <h4 className="font-bold mb-2 uppercase text-xs tracking-widest text-brand-dark">
                     Täislahendus
                   </h4>
                   <p className="text-sm text-muted-foreground">
@@ -255,7 +255,7 @@ function Index() {
                   </p>
                 </div>
                 <div className="p-6 bg-surface-muted border border-border">
-                  <h4 className="font-bold mb-2 uppercase text-xs tracking-widest text-brand-orange">
+                  <h4 className="font-bold mb-2 uppercase text-xs tracking-widest text-brand-dark">
                     Kõigile klientidele
                   </h4>
                   <p className="text-sm text-muted-foreground">
@@ -263,7 +263,7 @@ function Index() {
                   </p>
                 </div>
                 <div className="p-6 bg-surface-muted border border-border">
-                  <h4 className="font-bold mb-2 uppercase text-xs tracking-widest text-brand-orange">
+                  <h4 className="font-bold mb-2 uppercase text-xs tracking-widest text-brand-dark">
                     Tartu & Lõuna-Eesti
                   </h4>
                   <p className="text-sm text-muted-foreground">
@@ -277,7 +277,7 @@ function Index() {
                 <h3 className="font-display text-3xl font-bold mb-6 tracking-tight">
                   Ei tea, kust alustada?
                 </h3>
-                <p className="text-[#E8E3DA] mb-8 leading-relaxed">
+                <p className="text-dark-panel-muted mb-8 leading-relaxed">
                   Pakume nõustamist ja hindamist. Kirjelda oma objekti — leiame just sulle sobiva
                   lahenduse ja anname ausa hinnangu.
                 </p>
@@ -290,7 +290,7 @@ function Index() {
                   ].map((t) => (
                     <li key={t} className="flex gap-3">
                       <span className="text-brand-orange font-bold">→</span>
-                      <span className="text-[#F7F5F1]">{t}</span>
+                      <span className="text-primary-foreground">{t}</span>
                     </li>
                   ))}
                 </ul>
@@ -402,13 +402,13 @@ function Index() {
             }}
           >
             <h3 className="font-display text-2xl font-bold mb-2">Saada päring</h3>
-            <p className="text-[#E8E3DA] text-sm mb-6">
+            <p className="text-dark-panel-muted text-sm mb-6">
               {selected.length > 0
                 ? `Valitud ${selected.length} teenust — lisame need automaatselt päringusse.`
                 : "Vali eelnevalt teenused või kirjelda oma vajadust allpool."}
             </p>
             {selectedServices.length > 0 && (
-              <div className="mb-6 rounded-sm border border-[#DED8CE]/20 bg-[#F7F5F1]/5 p-4">
+              <div className="mb-6 rounded-sm border border-dark-panel-muted/20 bg-primary-foreground/5 p-4">
                 <p className="mb-3 text-[10px] font-bold uppercase tracking-widest text-brand-orange">
                   Valitud teenused
                 </p>
@@ -416,13 +416,13 @@ function Index() {
                   {selectedServices.map((service) => (
                     <span
                       key={service.id}
-                      className="rounded-full border border-brand-orange/40 px-3 py-1 text-xs font-semibold text-[#F7F5F1]"
+                      className="rounded-full border border-brand-orange/40 px-3 py-1 text-xs font-semibold text-primary-foreground"
                     >
                       {service.title}
                     </span>
                   ))}
                 </div>
-                <p className="mt-3 text-sm text-[#E8E3DA]">
+                <p className="mt-3 text-sm text-dark-panel-muted">
                   Need teenused lisatakse automaatselt päringusse.
                 </p>
               </div>
@@ -432,32 +432,32 @@ function Index() {
               name="nimi"
               required
               placeholder="Sinu nimi"
-              className="w-full bg-brand-zinc border-none p-4 text-base md:text-sm text-primary-foreground focus:ring-2 focus:ring-brand-orange focus:outline-none placeholder:text-[#E8E3DA]/70"
+              className="w-full bg-brand-zinc border-none p-4 text-base md:text-sm text-primary-foreground focus:ring-2 focus:ring-brand-orange focus:outline-none placeholder:text-dark-panel-muted/70"
             />
             <input
               name="kontakt"
               required
               placeholder="E-post või telefon"
-              className="w-full bg-brand-zinc border-none p-4 text-base md:text-sm text-primary-foreground focus:ring-2 focus:ring-brand-orange focus:outline-none placeholder:text-[#E8E3DA]/70"
+              className="w-full bg-brand-zinc border-none p-4 text-base md:text-sm text-primary-foreground focus:ring-2 focus:ring-brand-orange focus:outline-none placeholder:text-dark-panel-muted/70"
             />
             <textarea
               name="sonum"
               rows={4}
               required
               placeholder="Kirjelda lühidalt oma objekti ja tööde mahtu"
-              className="w-full bg-brand-zinc border-none p-4 text-base md:text-sm text-primary-foreground focus:ring-2 focus:ring-brand-orange focus:outline-none placeholder:text-[#E8E3DA]/70 resize-none"
+              className="w-full bg-brand-zinc border-none p-4 text-base md:text-sm text-primary-foreground focus:ring-2 focus:ring-brand-orange focus:outline-none placeholder:text-dark-panel-muted/70 resize-none"
             />
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-4 bg-brand-orange text-accent-foreground font-bold uppercase tracking-widest text-sm hover:bg-brand-copper-hover transition-all disabled:cursor-not-allowed disabled:opacity-70"
+              className="w-full py-4 bg-brand-orange text-brand-zinc font-bold uppercase tracking-widest text-sm hover:bg-brand-copper-hover transition-all disabled:cursor-not-allowed disabled:opacity-70"
             >
               {isSubmitting ? "Saadan..." : "Saada päring"}
             </button>
             {submitMessage ? (
               <p
                 className={`text-sm ${
-                  submitStatus === "success" ? "text-[#E8E3DA]" : "text-brand-orange"
+                  submitStatus === "success" ? "text-dark-panel-muted" : "text-red-300"
                 }`}
               >
                 {submitMessage}
@@ -470,7 +470,7 @@ function Index() {
       {/* Footer */}
       <footer className="bg-brand-dark text-primary-foreground py-14 border-t border-brand-dark">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-10 border-b border-[#DED8CE]/20 pb-12 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-10 border-b border-dark-panel-muted/20 pb-12 md:grid-cols-2 lg:grid-cols-4">
             <div className="lg:col-span-1">
               <div className="flex items-center gap-2 mb-3">
                 <img src="/centivo-logo.png" alt="Centivo OÜ logo" className="size-6 object-contain" />
@@ -478,11 +478,11 @@ function Index() {
                   Centivo OÜ
                 </span>
               </div>
-              <p className="text-sm leading-relaxed text-[#E8E3DA]">
+              <p className="text-sm leading-relaxed text-dark-panel-muted">
                 Ehitustööd, krohvimine, maalritööd ja märgfassaadi tööd Tartus,
                 Tartumaal ja Lõuna-Eestis.
               </p>
-              <p className="mt-4 text-xs font-bold uppercase tracking-widest text-[#E8E3DA]">
+              <p className="mt-4 text-xs font-bold uppercase tracking-widest text-dark-panel-muted">
                 Registrikood: 17512951
               </p>
             </div>
@@ -491,7 +491,7 @@ function Index() {
               <h2 className="mb-4 text-xs font-bold uppercase tracking-widest text-brand-orange">
                 Kontakt
               </h2>
-              <div className="space-y-3 text-sm text-[#E8E3DA]">
+              <div className="space-y-3 text-sm text-dark-panel-muted">
                 <p>
                   Telefon:{" "}
                   <a
@@ -518,7 +518,7 @@ function Index() {
               <h2 className="mb-4 text-xs font-bold uppercase tracking-widest text-brand-orange">
                 Teenused
               </h2>
-              <ul className="space-y-2 text-sm text-[#E8E3DA]">
+              <ul className="space-y-2 text-sm text-dark-panel-muted">
                 <li>Krohvimine</li>
                 <li>Maalritööd</li>
                 <li>Märgfassaadi tööd</li>
@@ -533,24 +533,24 @@ function Index() {
                 Lingid
               </h2>
               <nav className="flex flex-col gap-2 text-sm">
-                <a href="/" className="text-[#E8E3DA] transition-colors hover:text-brand-orange">
+                <a href="/" className="text-dark-panel-muted transition-colors hover:text-brand-orange">
                   Avaleht
                 </a>
                 <a
                   href="/tehtud-tood"
-                  className="text-[#E8E3DA] transition-colors hover:text-brand-orange"
+                  className="text-dark-panel-muted transition-colors hover:text-brand-orange"
                 >
                   Teenused
                 </a>
                 <a
                   href="/uudised"
-                  className="text-[#E8E3DA] transition-colors hover:text-brand-orange"
+                  className="text-dark-panel-muted transition-colors hover:text-brand-orange"
                 >
                   Uudised
                 </a>
                 <a
                   href="/#kontakt"
-                  className="text-[#E8E3DA] transition-colors hover:text-brand-orange"
+                  className="text-dark-panel-muted transition-colors hover:text-brand-orange"
                 >
                   Kontakt
                 </a>
@@ -573,7 +573,7 @@ function Index() {
               </nav>
             </div>
           </div>
-          <div className="pt-8 flex flex-col md:flex-row justify-between gap-4 text-[10px] text-[#E8E3DA] uppercase tracking-widest font-bold">
+          <div className="pt-8 flex flex-col md:flex-row justify-between gap-4 text-[10px] text-dark-panel-muted uppercase tracking-widest font-bold">
             <span>© {new Date().getFullYear()} Centivo OÜ</span>
             <a href="/#paring" className="transition-colors hover:text-brand-orange">
               Küsi pakkumist
@@ -592,7 +592,7 @@ function Index() {
             </span>
             <a
               href="#paring"
-              className="shrink-0 rounded-full bg-brand-orange px-4 py-2 text-xs font-bold uppercase tracking-wider text-primary-foreground transition-colors hover:bg-brand-copper-hover"
+              className="shrink-0 rounded-full bg-brand-orange px-4 py-2 text-xs font-bold uppercase tracking-wider text-brand-zinc transition-colors hover:bg-brand-copper-hover"
             >
               Jätka päringuga
             </a>

@@ -33,7 +33,7 @@ function UudisDetail() {
       <article className="mx-auto max-w-4xl">
         <header>
           <div className="flex flex-wrap items-center gap-3">
-            <span className="rounded-full bg-brand-orange/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand-orange">
+            <span className="rounded-full bg-brand-orange/15 px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand-dark">
               {post.category}
             </span>
             <time
@@ -81,7 +81,7 @@ function UudisDetail() {
           <h2 className="font-display text-3xl font-bold tracking-tight">
             Vajad nõu oma objekti osas?
           </h2>
-          <p className="mt-4 text-[#E8E3DA] leading-relaxed">
+          <p className="mt-4 text-dark-panel-muted leading-relaxed">
             Kirjelda oma olukorda ja aitame hinnata, milline töö või etapp oleks
             mõistlik esimesena ette võtta.
           </p>
@@ -89,13 +89,13 @@ function UudisDetail() {
         <div className="mt-8 flex flex-wrap gap-4">
           <a
             href="/#paring"
-            className="px-6 py-3 bg-brand-orange text-primary-foreground font-bold uppercase tracking-wider text-xs rounded-sm hover:bg-brand-copper-hover transition-colors"
+            className="px-6 py-3 bg-brand-orange text-brand-zinc font-bold uppercase tracking-wider text-xs rounded-sm hover:bg-brand-copper-hover transition-colors"
           >
             Küsi pakkumist
           </a>
           <a
             href="/uudised"
-            className="px-6 py-3 border border-[#DED8CE]/40 text-primary-foreground font-bold uppercase tracking-wider text-xs rounded-sm hover:bg-primary-foreground hover:text-brand-dark transition-colors"
+            className="px-6 py-3 border border-dark-panel-muted/40 text-primary-foreground font-bold uppercase tracking-wider text-xs rounded-sm hover:bg-primary-foreground hover:text-brand-dark transition-colors"
           >
             Tagasi uudistesse
           </a>

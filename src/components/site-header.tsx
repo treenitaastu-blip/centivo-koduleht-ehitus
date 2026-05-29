@@ -20,7 +20,7 @@ export function SiteHeader() {
             aria-controls="mobile-navigation"
             aria-expanded={isMenuOpen}
             onClick={() => setIsMenuOpen((open) => !open)}
-            className="flex size-10 items-center justify-start text-foreground transition-colors hover:text-brand-orange md:hidden"
+            className="flex size-10 items-center justify-start text-foreground transition-colors hover:text-brand-dark md:hidden"
           >
             <span className="flex flex-col gap-1.5">
               <span className="block h-0.5 w-5 bg-current" />
@@ -40,13 +40,13 @@ export function SiteHeader() {
           </a>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-wider">
             {navigationLinks.map((link) => (
-              <a key={link.href} href={link.href} className="hover:text-brand-orange transition-colors">
+              <a key={link.href} href={link.href} className="hover:text-brand-dark transition-colors">
                 {link.label}
               </a>
             ))}
             <a
               href="/#paring"
-              className="px-5 py-2.5 bg-brand-orange text-primary-foreground rounded-full hover:bg-brand-copper-hover transition-all"
+              className="px-5 py-2.5 bg-brand-orange text-brand-zinc rounded-full hover:bg-brand-copper-hover transition-all"
             >
               Pakkumine
             </a>
@@ -54,7 +54,7 @@ export function SiteHeader() {
           <a
             href="/#paring"
             onClick={() => setIsMenuOpen(false)}
-            className="justify-self-end px-4 py-2 bg-brand-orange text-primary-foreground rounded-full text-xs font-medium uppercase tracking-wider hover:bg-brand-copper-hover transition-colors md:hidden"
+            className="justify-self-end px-4 py-2 bg-brand-orange text-brand-zinc rounded-full text-xs font-medium uppercase tracking-wider hover:bg-brand-copper-hover transition-colors md:hidden"
           >
             Pakkumine
           </a>
@@ -69,7 +69,7 @@ export function SiteHeader() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="block rounded-xl px-4 py-3 text-sm font-medium uppercase tracking-wider transition-colors hover:bg-brand-orange/10 hover:text-brand-orange"
+                className="block rounded-xl px-4 py-3 text-sm font-medium uppercase tracking-wider transition-colors hover:bg-surface-muted hover:text-brand-dark"
               >
                 {link.label}
               </a>
