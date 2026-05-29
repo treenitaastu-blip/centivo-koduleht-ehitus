@@ -128,15 +128,29 @@
 
 @media (max-width: 767px) {
   .hero-blueprint-bg {
-    opacity: 0.45;
+    opacity: 0.62;
+    background:
+      radial-gradient(circle at 86% 14%, rgba(11, 61, 115, 0.17), transparent 36%),
+      radial-gradient(circle at 76% 58%, rgba(245, 180, 0, 0.11), transparent 15%),
+      linear-gradient(90deg, rgba(11, 61, 115, 0.075) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(11, 61, 115, 0.065) 1px, transparent 1px),
+      linear-gradient(135deg, transparent 0 44%, rgba(11, 61, 115, 0.075) 44.2% 44.8%, transparent 45% 100%),
+      linear-gradient(25deg, transparent 0 57%, rgba(184, 192, 200, 0.22) 57.2% 57.8%, transparent 58% 100%);
+    background-position:
+      center,
+      center,
+      right -8px top 8px,
+      right -8px top 8px,
+      right -40px top -48px,
+      right -72px top -24px;
     background-size:
       auto,
       auto,
-      56px 56px,
-      56px 56px,
+      52px 52px,
+      52px 52px,
       420px 420px,
       500px 500px;
-    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.42) 100%);
-    -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.42) 100%);
+    mask-image: linear-gradient(105deg, transparent 0%, rgba(0, 0, 0, 0.08) 24%, rgba(0, 0, 0, 0.46) 58%, rgba(0, 0, 0, 0.75) 100%);
+    -webkit-mask-image: linear-gradient(105deg, transparent 0%, rgba(0, 0, 0, 0.08) 24%, rgba(0, 0, 0, 0.46) 58%, rgba(0, 0, 0, 0.75) 100%);
   }
 }
